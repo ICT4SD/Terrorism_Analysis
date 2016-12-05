@@ -7,22 +7,26 @@ The whole process simply the original dataset and shortens the loading time for 
 
 import pandas as pd
 import numpy as np
-from package import feature
+from feature import *
 
 
-path_excelfile = '/Users/Viola/CDS/programmingDS/Project/Data/GTD_0616dist/globalterrorismdb_0616dist.xlsx'
+path_excelfile = '../data/globalterrorismdb_0616dist.xlsx'
 
 def excel_to_csv(path_excelfile):
     whole = pd.read_excel(path_excelfile)
-    whole.to_csv('wholedata.csv')
+    whole.to_csv('gtd_wholedata.csv')
+    
     
 def make_df():
-    df_raw = pd.read_csv('wholedata.csv', low_memory=False, index_col=0)
-    features = feature.selection()
-    return df_raw[features]
+    df_new = pd.read_csv('gtd_wholedata.csv', usecols=selection(), low_memory=False, index_col=0)
+    df_new.columns = feature_names()
+    return df_new
+
 
 def save_df_csv():
-    make_df().to_csv('wholedata_selected.csv')
+    '''make a csv file with all selected features'''
+    return make_df().to_csv('gtd_wholedata_selected.csv')
+
 
 
 
