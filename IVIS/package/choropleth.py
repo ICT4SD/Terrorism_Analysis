@@ -10,23 +10,23 @@ import folium
 from feature import *
 from ipywidgets import *
 from IPython.display import display
-from heatmap import Indication_selection
-from data import load_json_file
+from heatmap import *
+from data import *
 
 
 class Choropleth(object):
     def __init__(self, Year, Indication):
         self.Year = Year
         self.Indication = Indication
+        self.df_by_yr = df_year_idx().loc[self.Year].fillna(0)
 
     def damage_by_year(self):
         '''
-        Return a grouped DataFrmae of chosen indication values by the given year.
+        Return a grouped DataFrame of chosen indication values
+        by the countries in the given year.
         '''
-        gt_df = pd.read_csv('gtd_wholedata_selected.csv')
-        gt_df_yr = gt_df[['country', self.Indication]].fillna(0)[gt_df.year==self.Year]
-        dam = gt_df_yr.groupby(['country']).sum()
-        return dam
+        dam_df_yr = self.df_by_yr[['country', self.Indication]]
+        return dam_df_yr.groupby(['country']).sum()
 
     def max_dam(self):
         '''
@@ -72,7 +72,7 @@ def plot_choropleth(Indication, Color, Year):
     map = folium.Map(location=[32, -90],
                      zoom_start=1.95,
                      min_zoom=1.95,
-                     tiles='Mapbox bright')
+                     tiles='Stamen Terrain')
     map.choropleth(geo_path=world_geo, data=gtd_data,
                    columns=['country', Indication],
                    threshold_scale=[0, 10, 100, 300, up/2, up],
@@ -81,8 +81,10 @@ def plot_choropleth(Indication, Color, Year):
                    legend_name='Casualty Level',
                    reset=True)
 
-    # map.add_child(folium.LayerControl())
-    # map.save(outfile='GTD Choropleth.html')
+    #map.add_child(folium.Marker([45.3288, -121.6625], popup='Mt. Hood Meadows'))
+
+    map.add_child(folium.LayerControl())
+    map.save(outfile='GTD Choropleth.html')
     return map
 
 

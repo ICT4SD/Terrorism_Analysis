@@ -6,7 +6,6 @@ The whole process simply the original dataset and shortens the loading time for 
 '''
 
 import pandas as pd
-import numpy as np
 from feature import *
 
 
@@ -18,7 +17,8 @@ def excel_to_csv(path_excelfile):
 
 
 def make_df():
-    df_new = pd.read_csv('gtd_wholedata.csv', usecols=selection(), low_memory=False, index_col=0)
+    df_new = pd.read_csv('gtd_wholedata.csv', usecols=selection(),
+                         low_memory=False, index_col=0)
     df_new.columns = feature_names()
     return df_new
 
@@ -26,6 +26,15 @@ def make_df():
 def save_df_csv():
     '''make a csv file with all selected features'''
     return make_df().to_csv('gtd_wholedata_selected.csv')
+
+
+def load_df():
+    '''load the DataFrame with selected features'''
+    return pd.read_csv('gtd_wholedata_selected.csv')
+
+def df_year_idx():
+    '''return the DataFrame with selected features, indexed by years'''
+    return pd.read_csv('gtd_wholedata_selected.csv', index_col='year')
 
 
 def load_json_file(filepath):
