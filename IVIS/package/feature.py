@@ -117,8 +117,29 @@ def convert_series(series, label):
     converted.reset_index(level=0, inplace=True)
     return converted
 
+def group_by_columns(data, group_by_columns, column_to_agg):
+    '''Takes a list of column names and a column to count and counts rows by those column name, including nulls'''
+    all_columns = group_by_columns + [column_to_agg]
+    data.loc[:, column_to_agg] = data.loc[:, column_to_agg].fillna(value=0)
+    data = data.loc[:,all_columns]
+    grouped = data.groupby(group_by_columns)
+    return grouped
+
+def sum_by_groups(grouped):
+    '''Takes output of group function and sums data'''
+    sums = grouped.sum().dropna()
+    sums.columns = ['sum']
+    return sums
+
+def count_by_groups(grouped):
+    '''Takes output of group function and counts data'''
+    counts = grouped.count().dropna()
+    counts.columns = ['count']
+    return counts
+
 
 ### Caroline's make_five_year_start function goes here :)
+### Viola, where did your "make 5" function go?
 
 
 def choose_feature(dataset, col_name):
