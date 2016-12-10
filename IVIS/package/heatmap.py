@@ -76,8 +76,8 @@ def Cmap_palette():
 
 
 def Indication_selection():
-    return ToggleButtons(options={'Casualties': 'casualties', 'Wounds': 'wounds'},
-                                       value='casualties',
+    return ToggleButtons(options={'Kills': 'kills', 'Wounds': 'wounds'},
+                                       value='kills',
                                        description='Indication',
                                        disabled=False,
                                        button_style='',

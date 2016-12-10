@@ -17,10 +17,16 @@ def excel_to_csv(path_excelfile):
 
 
 def make_df():
-    df_new = pd.read_csv('gtd_wholedata.csv', usecols=selection(),
+    '''
+    make the DataFrame with selected features
+    rename the features
+    add "casualties" as sum of "kills" and "wounds"
+    '''
+    df = pd.read_csv('gtd_wholedata.csv', usecols=selection(),
                          low_memory=False, index_col=0)
-    df_new.columns = feature_names()
-    return df_new
+    df.columns = feature_names()
+    df['casualties'] = df.kills + df.wounds
+    return df
 
 
 def save_df_csv():
@@ -30,11 +36,12 @@ def save_df_csv():
 
 def load_df():
     '''load the DataFrame with selected features'''
-    return pd.read_csv('gtd_wholedata_selected.csv')
+    df = pd.read_csv('gtd_wholedata_selected.csv').fillna(0)
+    return df
 
 def df_year_idx():
     '''return the DataFrame with selected features, indexed by years'''
-    return pd.read_csv('gtd_wholedata_selected.csv', index_col='year')
+    return pd.read_csv('gtd_wholedata_selected.csv', index_col='year').fillna(0)
 
 
 def load_json_file(filepath):
