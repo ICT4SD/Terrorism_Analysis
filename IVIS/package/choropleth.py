@@ -9,7 +9,7 @@ import re
 import folium
 from feature import *
 from ipywidgets import *
-from IPython.display import display
+#from IPython.display import display
 from heatmap import *
 from data import *
 
@@ -70,21 +70,21 @@ def plot_choropleth(Indication, Color, Year):
     up = Choropleth(Year, Indication).scale_max()
 
     map = folium.Map(location=[32, -90],
-                     zoom_start=1.95,
-                     min_zoom=1.95,
-                     tiles='Stamen Terrain')
+                     zoom_start=2,
+                     min_zoom=2,
+                     tiles='Mapbox bright')
     map.choropleth(geo_path=world_geo, data=gtd_data,
                    columns=['country', Indication],
-                   threshold_scale=[0, 10, 100, 300, up/2, up],
+                   threshold_scale=[0, 10, 100, up/3, up*2/3, up],
                    key_on='feature.properties.name',
-                   fill_color=Color, fill_opacity=0.5, line_opacity=0.5,
+                   fill_color=Color, fill_opacity=0.7, line_opacity=0.2,
                    legend_name='Casualty Level',
                    reset=True)
 
     #map.add_child(folium.Marker([45.3288, -121.6625], popup='Mt. Hood Meadows'))
 
-    map.add_child(folium.LayerControl())
-    map.save(outfile='GTD Choropleth.html')
+    #map.add_child(folium.LayerControl())
+    #map.save(outfile='GTD Choropleth.html')
     return map
 
 
@@ -108,11 +108,11 @@ def Color_palette():
     return Dropdown(options={'Ocean': 'PuBu', 'Orchid': 'RdPu', \
                              'NYU Pride': 'BuPu', 'Alert': 'OrRd', \
                              'Water Green': 'GnBu', 'Autumn Leaf': 'YlOrBr'},
-                    value='BuPu',
+                    value='PuBu',
                     description='Palette',
                     disabled=False,
-                    button_style='')
+                    button_style='info')
 
 
-def Display_Your_Chorpleth():
+def Display_Your_Choropleth():
     return interact(plot_choropleth, Year=year_slider(), Indication=Indication_selection(), Color=Color_palette())

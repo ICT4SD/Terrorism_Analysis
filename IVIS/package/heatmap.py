@@ -3,7 +3,7 @@ This module includes:
     - IVIS class, with the attrubutes:
         1. feature-selected dataframe of Global Terrorism Database
         2. a unieque list of region names
-    - visualization function of the dataset in heatmap, :
+    - visualization function of the dataset in heatmap
     - the target feature
     - the visualizing color palette
 
@@ -48,7 +48,7 @@ def Heatmap_by_region(Indication, Region, Cmap):
     fig = plt.figure(figsize=(25, int(len(IVIS().countries_by_region()[Region])*2/3)))
     pivot_table = y_c.pivot('country', 'year', Indication).fillna(0)
     plt.title('Yearly Number of {} in {} by Terror Attacks (1970-2015)\n'.format(Indication.capitalize(),
-                                                                               Region), size = 25)
+                                                                               Region), size = 20)
     plt.xlabel('Regions', size = 14)
     plt.ylabel('Years', size = 14)
     plt.xticks(rotation=-15)
@@ -66,25 +66,34 @@ def Heatmap_by_region(Indication, Region, Cmap):
     plt.show()
 
 
+def region_picker():
+    return Dropdown(options=tuple(IVIS().region_names),
+                    description='Region',
+                    disabled=False,
+                    button_style='info' # 'success', 'info', 'warning', 'danger' or ''
+                    )
+
+
 def Cmap_palette():
     return Dropdown(options={'Aqua': 'cool', 'Lemon': 'Wistia', 'NYU Pride': 'Purples_r', 'Alert': 'Reds', 'B&W': 'gist_gray_r', 'Classic': 'RdBu_r'},
                     value='cool',
                     description='Palette',
                     disabled=False,
-                    button_style='')
+                    button_style='info')
 
 
 
 def Indication_selection():
-    return ToggleButtons(options={'Kills': 'kills', 'Wounds': 'wounds'},
-                                       value='kills',
-                                       description='Indication',
-                                       disabled=False,
-                                       button_style='',
-                                       tooltip='Description')
+    return ToggleButtons(options={'Kills': 'kills', 'Wounds': 'wounds', 'Casualties': 'casualties'},
+                         value='casualties',
+                         description='Indication',
+                         disabled=False,
+                         button_style='',  # 'success', 'info', 'warning', 'danger' or ''
+                         tooltip='Description')
+
 
 def Display_Your_Heatmap():
     return interact(Heatmap_by_region,
-                    Region=tuple(IVIS().region_names),
+                    Region=region_picker(),
                     Cmap = Cmap_palette(),
                     Indication = Indication_selection())

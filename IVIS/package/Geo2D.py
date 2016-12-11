@@ -1,3 +1,8 @@
+'''
+
+'''
+
+
 from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -64,7 +69,11 @@ def year_interval():
 
 
 def map_styles():
-    return ('Blue Marble', 'Etopo', 'Plain')
+    return Dropdown(options=('Blue Marble', 'Etopo', 'Plain'),
+                    value='Blue Marble',
+                    description='Map Style:',
+                    disabled=False,
+                    button_style='info')
 
 
 def Display_Your_Geo2D_Map():
