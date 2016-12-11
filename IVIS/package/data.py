@@ -6,6 +6,8 @@ The whole process simply the original dataset and shortens the loading time for 
 '''
 
 import pandas as pd
+import re
+import json
 from feature import *
 
 
@@ -45,7 +47,9 @@ def df_year_idx():
 
 
 def load_json_file(filepath):
-    pd.set_option('display.max_rows', None)
-    pd.set_option('display.max_colwidth', 100000)
-    json_df = pd.read_json(filepath).iloc[:, :-1]
-    return json_df
+    if not re.match(r'.+\.(json){1}$', filepath):
+        raise LoadJsonError
+    else:
+        with open('countries.geo.json') as json_data:
+            j = json.load(json_data)
+    return j

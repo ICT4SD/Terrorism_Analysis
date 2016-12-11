@@ -159,7 +159,7 @@ def analy_ctr(Country):
     analysis_str = '\
              Statistical Analysis - Terror Attacks in {}                        \n\
                                   * * *                                         \n\
---------------------------------------------------------------------------------\n\
+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--\n\
 During the year 1970 to 2015:                                                   \n\
     - The year with the most attacks:        {}                                 \n\
              * {} times of terror attacks in {} in this year                    \n\
@@ -181,7 +181,7 @@ During the year 1970 to 2015:                                                   
         3) The standard deviation:           {} \n \
             * kills                          {} \n \
             * wounds                         {} \n \
---------------------------------------------------------------------------------\n'
+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--\n'
     analysis = analysis_str.format(Country,
                                    np.argmax(df_ixby_yr.occur),               # the year with maximum occurrence
                                    int(df_ixby_yr.occur.max()),               # the maximum occurrence
