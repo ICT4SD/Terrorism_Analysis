@@ -21,56 +21,62 @@ from data import *
 
 def set_as_index(df, colname):
     '''
-    use this function to set DataFrame's feature,
-    such as 'year' and 'country', as index
+    Parameter
+        - df                                                | DataFrame
+        - colname: feature name, e.g. 'year' and 'country'  | str
+    Return
+        a DataFrame with colname as index
     '''
     return df.set_index(colname)
 
 def df_occur_by_ctr(ctr_name):
     '''
     Parameter
-         - ctr_name: country name or "The Whole World"  | str
+         - ctr_name: country name or "The Whole World"      | str
     Return
          - number of attacks in the chosen country
            across the whole time series
-           (years without occurrences are omitted)      | DataFrame
+           (non-attack years not included)                  | DataFrame
     '''
     df = load_df()
     if ctr_name == 'The Whole World':
         df_all_c = df
     # It is necessary to convert the variable "df_call_c"
-    # to the transposing DataFrame format
-    # for countries with only one time attack occurrence
+    # to the transposing DataFrame format,
+    # for countries with only one time attack occurrence.
     # Otherwise will cause bugs
     else:
         df_all_c = set_as_index(df, 'country').ix[ctr_name]
-        if type(df_all_c) == pd.Series:
+        if type(df_all_c) == pd.Series:  # for those countries with only one attack
             df_all_c = pd.DataFrame(df_all_c).T
     df_yr = pd.DataFrame(df_all_c.groupby('year').count().eventid)
+    # rename the 'count' column as 'occur' to avoid unexpected potential misusage
     df_yr.columns = ['occur']
     return df_yr.reset_index()
 
 def df_occur_by_ctr_allyears(ctr_name):
     '''
     Parameter
-         - ctr_name: country name | str
+         - ctr_name: country name                               | str
     Return
-         - number of attack occurrences in the chosen country
+         - number of attack occurrences
+           in the chosen country
            across the whole time series
-           (years without occurrences are not omitted) | DataFrame
+           (all years included, including non-attack years)     | DataFrame
     '''
     dic_yr = {'year': list(range(1970, 2016)),
               'null': np.zeros((2015-1970)+1, dtype=int)}
     df_years = pd.DataFrame(dic_yr)
     df_full_yr = pd.merge(df_years, df_occur_by_ctr(ctr_name),
-                          on='year', how='outer').fillna(0)
+                          on='year', how='outer').fillna(0)  # merge all years
     return df_full_yr[['year', 'occur']]
 
 
 def gtd_country_names():
     '''
-    return a list of all the country names
-    started with 'The Whole World'
+    Return a list of:
+        - all country names in alphabetical order, plus
+        - 'The Whole World'
     '''
     all_ctr = sorted(load_df().country.unique())
     all_ctr.insert(0, 'The Whole World')
@@ -80,7 +86,7 @@ def gtd_country_names():
 def drop93(df):
     '''
     Parameter
-        - df : DataFrame  | DataFrame
+        - df: a Dataframe with feature "year"     | DataFrame
     Return
         a DataFrame without the year 1993,
         since there is no data in the GT Database
@@ -88,31 +94,13 @@ def drop93(df):
     return df[df.year != 1993]
 
 
-def world_stats():
-    '''
-    Return a statistical analyzing table of
-    all countries' attack data
-    across the whole time series | DataFrame
-    '''
-    stats_list = ['count', 'sum', 'mean', 'max']
-    feature_list = ['year', 'kills', 'wounds', 'casualties']
-    world_stats = load_df()[feature_list].groupby('year').agg(stats_list).reset_index()
-    return world_stats
-
-def df_ctr_all(Country):
-    '''
-    Retrun a DataFrame from 1970 to 2015
-    with features includes:
-        - selected ones
-        - number of annual attack occurrences
-    for the chosen country
-    '''
-    df1 = df_ctr(Country).groupby('year').sum().reset_index()
-    df2 = df_occur_by_ctr_allyears(Country)
-    df_merge = pd.merge(df1, df2, on='year', how='outer').fillna(0).sort_values(by='year')
-    return df_merge.reset_index().drop(['index'], 1)
-
 def df_ctr(Country):
+    '''
+    Parameter
+        - Country: name of a country or "The Whole World"   | str
+    Return
+        a DataFrame with delected features
+    '''
     if Country == 'The Whole World':
         df_ctr = load_df()
     else:
@@ -123,7 +111,7 @@ def df_ctr(Country):
 def df_ctr_all(Country):
     '''
     Parameter
-        Country | str
+        Country: name of a country or "The Whole World"   | str
     Retrun
         a DataFrame (excluding 1993)
     Features
@@ -142,7 +130,7 @@ def ctr_stats(Country):
     '''
     Return a statistical analyzing table of
     the chosen country's attack data
-    across the whole time series | DataFrame
+    across the whole time series                 | DataFrame
     '''
     ctr_stats = df_ctr_all(Country).describe().T
     ctr_stats['sum'] = df_ctr_all(Country).sum()
@@ -150,9 +138,9 @@ def ctr_stats(Country):
 
 def analy_ctr(Country):
     '''
-    Return a short statistical analysis of
-    the chosen country's attack data
-    across the whole time series | String
+    Return a structured statistical analysis
+    of the chosen country's attack data
+    across the whole time series                 | String
     '''
     desc = ctr_stats(Country)
     df_ixby_yr = df_ctr_all(Country).set_index('year')
@@ -209,41 +197,53 @@ During the year 1970 to 2015:                                                   
 def analy_and_plot(Country, Feature, Color):
     '''
     Parameters
-        Country: country name  | str
-        Color: color of plot   | str
+        - Country: country name          | str
+        - Feature: type of damage        | str
+        - Color:   color of plot         | str
+    Return
+        - Line Plot in smoothed fashion  | Plot
+        - Statistical analysis           | String
     '''
     fig = plt.figure(figsize=(15, 5))
 
     df = df_ctr_all(Country)
     x = df.year
     y = df[Feature]
+    mean = ctr_stats(Country)['sum'].loc[Feature] / 45.0
 
     # set smooth linestyle
     x = np.array(x)
     y = np.array(y)
-    x_smooth = np.linspace(x.min(), x.max(), 900)
-    y_smooth = spline(x, y, x_smooth)
+    x_smooth = np.linspace(x.min(), x.max(), 500)
+    y_smooth = spline(x, y, x_smooth)  # use spline in scipy library to smooth
 
     # set the seaborn gird background as white
     sns.set(style="whitegrid")
-    plt.plot(x_smooth, y_smooth, '-', color=Color, linewidth=3)
+    plt.plot(x_smooth, y_smooth, '-', color=Color, linewidth=3,
+             label='{} in {}'.format(Feature.capitalize(), Country))
+    plt.axhline(y=mean, label='Average {}'.format(Feature.capitalize()),
+                color='k', linewidth=1, linestyle='dashed')
+    plt.ylim(ymin=0)
     plt.title('Terror Attack {} in {} (1970-2015)'.format(Feature.capitalize(), Country), size=16)
     plt.xlabel('Year', size=14)
     plt.ylabel('Number of Terror {}'.format(Feature.capitalize()), size=14)
-    plt.legend(['Terror {} in {}'.format(Feature.capitalize(), Country)])
+    plt.legend()
     plt.show()
     print(analy_ctr(Country))
 
 
 def color_picker():
     '''
-    Return a color string from users' manual picks
+    Return a tring of color from users' manual pick
     '''
     clr = ColorPicker(concise=False, description='Color:', value='#41c5f6')
     return clr
 
 
 def country_picker():
+    '''
+    Return a string of country name from users' manual pick
+    '''
     return Dropdown(options=gtd_country_names(),
                     description='Country:',
                     disabled=False,
@@ -252,10 +252,14 @@ def country_picker():
 
 
 def feature_picker():
+    '''
+    Return a string of feature name from users' manual pick
+    '''
     return Dropdown(options={'Occurrence': 'occur',
                              'Casualty': 'casualties',
                              'Death': 'kills',
-                             'Wounds': 'wounds'},
+                             'Wound': 'wounds'},
+                    value='casualties',
                     description='Feature:',
                     disabled=False,
                     button_style='info'
@@ -264,12 +268,15 @@ def feature_picker():
 
 def Display_Your_Analysis_And_LinePlot():
     '''
-    Allow users to interactively customize lineplot
+    Allow users to interactively explore data information
+    and customize:
+        - the lineplot
+        - the Statistical Analysis
     '''
     try:
-        return interact(analy_and_plot,
-                        Country=country_picker(),
-                        Feature=feature_picker(),
-                        Color=color_picker())
+        interact(analy_and_plot,
+                 Country=country_picker(),
+                 Feature=feature_picker(),
+                 Color=color_picker())
     except NoCountryDataError as x:
         print(x)
