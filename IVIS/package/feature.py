@@ -24,18 +24,31 @@ import numpy as np
 
 
 def selection():
-    features = ['eventid', 'iyear', 'country_txt', 'region_txt','latitude', 'longitude', \
-                         'attacktype1_txt', 'nkill', 'nwound']
+    '''
+    feature selection
+    '''
+    features = ['eventid', 'iyear', 'country_txt', 'region_txt', \
+                'latitude', 'longitude', \
+                'attacktype1_txt', 'nkill', 'nwound']
     return features
 
 
 def feature_names():
+    '''
+    rename the features for easier re-processing
+    '''
     return ['year', 'country', 'region', 'latitude', 'longitude', \
                          'attacktype', 'kills', 'wounds']
 
 
 def make_list(dataset, col_name):
-    '''extract a list of values in selected feature and return as a numpy array'''
+    '''
+    Parameter
+        - dataset                    | DataFrame
+        - col_name                   | str
+    Return
+        values of selected feature   | np.array
+    '''
     new_list = []
     for i in dataset[col_name].values.tolist():
         new_list.append(i)
@@ -43,30 +56,45 @@ def make_list(dataset, col_name):
 
 
 def make_log_list(dataset, col_name):
-    '''extract a list of values in logarithm in selected feature and return as a numpy array'''
+    '''
+    Parameter
+        - dataset                                 | DataFrame
+        - col_name                                | str
+    Return
+        values of selected feature (in logarithm) | np.array
+    '''
     new_list = []
     for i in dataset[col_name].values.tolist():
         new_list.append(np.log(i))
     return np.array(new_list)
 
-
+#################################################################################
 def find_null(dataset, col_name):
+    '''
+    NOT USING THIS! CAN I DELETE THIS FUNCTION?~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    '''
     df_null = dataset[dataset[col_name].isnull()]
     return df_null
 
 
 def get_rid_of_null(dataset, col_name):
+    '''
+    NOT USING THIS! CAN I DELETE THIS FUNCTION?~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    '''
     df_not_null = dataset[dataset[col_name].notnull()]
     return df_not_null
 
 
 def one_or_more_yr(dataset):
-    """
+    '''
+    NOT USING THIS! CAN I DELETE THIS FUNCTION?~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    '''
+    '''
     This function allow users to choose whether they want to choose:
         1) a single year, or
         2) a multi-year time period
     to present feature occurrence patterns
-    """
+    '''
     choice = input('To view by a single year, please enter "s"; by multiple continuous years, please enter "m".\nPlease enter: ')
     if choice.lower() == 's':
         return select_by_year(dataset)
@@ -77,22 +105,32 @@ def one_or_more_yr(dataset):
 
 
 def select_by_year(dataset):
+    '''
+    NOT USING THIS! CAN I DELETE THIS FUNCTION?~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    '''
     '''allow users to select a dataframe by choosing a year between 1970 to 2015'''
     year = input('Please choose a year between 1970 to 2015: ')
     return dataset[(dataset['iyear']) == int(year)]
 
 
 def select_btw_years(dataset):
+    '''
+    NOT USING THIS! CAN I DELETE THIS FUNCTION?~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    '''
     '''allow users to select a dataframe by choosing starting and ending years between 1970 to 2015'''
     year1 = input('Please choose the beginning year between 1970 to 2015: ')
     year2 = input('Please choose the ending year between 1970 to 2015: ')
     return dataset[dataset.iyear.isin(range(int(year1), int(year2)+1))]
-
+#################################################################################
 
 def make_five_year_start(dataset):
-    # periods are partitioned by every 5 years
-    # eg. period 1990 means from year 1990 to year 1994
-    # returns a Series
+    '''
+    Parameter
+        - dataset | DataFrame
+    periods are partitioned by every 5 years
+        eg. period 1990 means from year 1990 to year 1994
+    returns a Series
+    '''
     dataset['period'] = [int(i/5)*5 for i in dataset.year]
     return dataset['period']
 
@@ -147,20 +185,3 @@ def count_by_groups(grouped):
 ### Caroline's make_five_year_start function goes here :)
 ### Viola, where did your "make 5" function go?
 ### It's right above your codes :DDD
-
-
-def choose_feature(dataset, col_name):
-    '''
-    allow users  to choose a feature type to present on the map
-    the value will be presented in logarithm
-    '''
-    feature_shown = make_log_list(dataset, col_name)
-    return feature_shown
-
-
-def group_feature():
-    pass
-
-
-def rank_feature():
-    pass
