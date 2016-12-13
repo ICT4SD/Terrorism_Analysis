@@ -89,7 +89,8 @@ def region_picker():
     '''
     Return a string of region name from users' manual pick
     '''
-    return Dropdown(options=tuple(IVIS().region_names),
+    return Dropdown(options=IVIS().region_names,
+                    value='Southeast Asia',
                     description='Region',
                     disabled=False,
                     button_style='info' # 'success', 'info', 'warning', 'danger' or ''
@@ -102,12 +103,12 @@ def Cmap_palette_picker():
     '''
     return Dropdown(options={'Aqua': 'cool',
                              'Lemon': 'Wistia',
-                             'NYU Pride': 'Purples_r',
+                             'NYU Pride': 'Purples',
                              'Alert': 'Reds',
                              'B&W': 'gist_gray_r',
                              'Classic': 'RdBu_r'
                              },
-                    value='cool',
+                    value='RdBu_r',
                     description='Palette',
                     disabled=False,
                     button_style='info')
