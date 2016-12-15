@@ -77,12 +77,13 @@ def make_five_year_start(dataset):
     '''
     Parameter
         - dataset | DataFrame
-    periods are partitioned by every 5 years
+
+    Return a new DataFrame with a new feature 'period'
+        periods are partitioned by every 5 years
         eg. period 1990 means from year 1990 to year 1994
-    returns a Series
     '''
     dataset['period'] = [int(i/5)*5 for i in dataset.year]
-    return dataset['period']
+    return dataset
 
 
 ### Caroline's functions
