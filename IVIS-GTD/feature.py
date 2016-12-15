@@ -12,6 +12,7 @@ Functions includes:
 
 
 import numpy as np
+import pandas as pd
 import data
 
 
@@ -133,6 +134,16 @@ def count_by_groups(grouped):
     counts = grouped.count().dropna()
     counts.columns = ['count']
     return counts
-### Caroline's make_five_year_start function goes here :)
-### Viola, where did your "make 5" function go?
-### It's right above your codes :DDD
+
+def create_range(series_to_group, group_size):
+    '''Turns a series into groups of a specified size'''
+    bins = np.arange(min(series_to_group) - group_size, max(series_to_group) + group_size, group_size)
+    ranges = pd.cut(series_to_group, bins)
+    ranges.name = series_to_group.name + ' ranges'
+    return ranges
+
+def replace_series_with_range(data, series_to_group, group_size):
+    '''Removes year column and merges range column'''
+    ranges = create_range(series_to_group, group_size)
+    data_replaced = pd.concat([data, pd.DataFrame(ranges)], axis = 1).drop(series_to_group.name, 1)
+    return data_replaced
