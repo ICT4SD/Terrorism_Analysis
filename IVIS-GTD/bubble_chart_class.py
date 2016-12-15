@@ -3,8 +3,7 @@ Created on Dec 14, 2016
 
 @author: Caroline
 '''
-import feature
-import data_reshape as dr
+import util
 import pandas as pd
 import numpy as np
 import matplotlib.patches as mpatches
@@ -32,18 +31,18 @@ class Bubble_Chart_Data():
         self.user_filter = user_filter
         self.values = values
         self.new_data = data
-        self.groups = dr.group_by_columns(self.data, [self.bubble_id], self.values)
-        self.subgroups = dr.group_by_columns(self.data, [self.bubble_id, self.color, self.user_filter], self.values)
+        self.groups = util.group_by_columns(self.data, [self.bubble_id], self.values)
+        self.subgroups = util.group_by_columns(self.data, [self.bubble_id, self.color, self.user_filter], self.values)
         self.x_values = values
         self.y_values = values
     
     def count_by_subgroup(self):
         '''Uses group from init function to create a count'''
-        return dr.count_by_groups(self.subgroups)
+        return util.count_by_groups(self.subgroups)
         
     def sum_by_subgroup(self):
         '''Uses sum from init function to create a sum'''
-        return dr.sum_by_groups(self.subgroups)
+        return util.sum_by_groups(self.subgroups)
     
     def aggregate_by_subgroup(self):
         '''Returns sum and count merged together'''
@@ -53,7 +52,7 @@ class Bubble_Chart_Data():
         
     def count_by_group(self):
         '''Returns the sum by groups (ignores user filters)'''
-        return dr.count_by_groups(self.groups)
+        return util.count_by_groups(self.groups)
     
     def set_bubble_size(self, bubble_size, new_col_name):
         '''bubble size must be a one-column dataframe or series with the bubble_id as the index'''
@@ -94,8 +93,8 @@ class Bubble_Chart_Data():
     
     def create_legend(self):
         '''Takes an object from the bubble chart data class and creates an appropriate legend. Must be called after process data'''
-        grouped_by_color = dr.group_by_columns(self.new_data, [self.color, 'color'], self.bubble_id)
-        counted_by_color = dr.count_by_groups(grouped_by_color)
+        grouped_by_color = util.group_by_columns(self.new_data, [self.color, 'color'], self.bubble_id)
+        counted_by_color = util.count_by_groups(grouped_by_color)
         counted_by_color.reset_index(inplace=True)
 
         colors_legend = {}

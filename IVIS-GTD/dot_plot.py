@@ -6,10 +6,8 @@ import pandas as pd
 import seaborn as sns
 import math
 
-import feature as ft
-from data_reshape import *
+import util as ut
 from dot_plot_class import *
-import feature as ft
 from Geo2d import year_interval_slider
 import heatmap as hm
 
@@ -32,7 +30,7 @@ def attack_type():
 
 def metric_selection():
     '''
-    Return a string of feature name from users' manual pick
+    Return a string of util name from users' manual pick
     '''
     metric = widgets.ToggleButtons(options={'Occurrences': 'occurrences', 'Casualties': 'casualties'},
                          value='occurrences',

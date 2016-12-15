@@ -5,7 +5,7 @@ Created on Dec 14, 2016
 '''
 
 from ipywidgets import *
-import feature
+import util
 import pandas as pd
 import numpy as np
 import heatmap as hm
@@ -14,14 +14,11 @@ import math
 import matplotlib.patches as mpatches
 from matplotlib import cm
 import bubble_chart_class as bcc
-import data_reshape as rs
 
 ivis = hm.IVIS()
 bubble_chart_features = ['year', 'country', 'region', 'casualties']
 gtd_bubble = ivis.gt_df[bubble_chart_features]
-gtd_bubble = feature.replace_series_with_range(gtd_bubble, gtd_bubble['year'], 5)
-
-#haven't updated the "feature" one on git.
+gtd_bubble = util.replace_series_with_range(gtd_bubble, gtd_bubble['year'], 5)
 
 bubble_chart = bcc.Bubble_Chart_Data(gtd_bubble, 'country', 'region', 'year ranges', 'casualties')
 

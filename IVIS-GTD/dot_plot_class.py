@@ -1,4 +1,4 @@
-from data_reshape import *
+from util import *
 
 class Dot_Plot_Data():
     def __init__(self, data, yaxis_vals, xaxis_vals, user_filter1, user_filter2, metric):
