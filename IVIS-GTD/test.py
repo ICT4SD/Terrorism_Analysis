@@ -9,6 +9,7 @@ This module tests:
 
 import unittest
 import pandas as pd
+import numpy as np
 import feature as ft
 import AnalysisAndLinePlot as al
 from data import *
@@ -63,9 +64,9 @@ class UserTest(unittest.TestCase):
         whether returns the correct DataFrames
         '''
         # test if the appended feature name 'casualties' is in the column names
-        self.assertTrue('casuaties' in make_df().columns.tolist())
+        self.assertTrue('casualties' in make_df().columns.tolist())
         # test whether the length of DataFrame is greater than 150,000
-        self.assertGreater(150,000, make_df()[0])
+        self.assertGreater(make_df().shape[0], 150000)
 
 
     def test_load_json_file(self):
@@ -86,7 +87,7 @@ class UserTest(unittest.TestCase):
         whether the correct income lists are returned
         '''
         df_test1 = pd.read_csv('https://bit.ly/uforeports')
-        self.assertEqual(np.array, ft.make_array(df_test1, 'City')))
+        self.assertEqual(np.ndarray, type(ft.make_array(df_test1, 'City')))
 
 
     def test_df_sel_btw_years(self):
@@ -107,7 +108,7 @@ class UserTest(unittest.TestCase):
         df3 = ft.make_five_year_start(load_df())
         self.assertTrue('period' in df3)
         self.assertTrue(2000 in list(df3[df3.year.isin([2001, 2002, 2004])].period))
-        self.assertTrue(2005 in list(df3[df3.year.isin([2001, 2002, 2004])].period))
+        self.assertNotIn(2005, list(df3[df3.year.isin([2001, 2002, 2004])].period.values))
 
     #################
 
@@ -121,10 +122,11 @@ class UserTest(unittest.TestCase):
         test the df_occur_by_ctr function in AnalysisAndLinePlot module
         whether the return DataFrame is in expected format with correct values
         '''
-        self.assertEqual(['year', 'occur'], df_occur_by_ctr('Germany').columns)
-        self.assertEqual(['year', 'occur'], df_occur_by_ctr('The Whole World').columns)
-        self.assertIn(2015, df_occur_by_ctr('The Whole World').year)
-        self.assertNotIn(1970, df_occur_by_ctr('Angola').year)  # No attacks in Angola in 1970
+        self.assertEqual(['year', 'occur'], list(al.df_occur_by_ctr('Germany').columns))
+        self.assertEqual(['year', 'occur'], list(al.df_occur_by_ctr('The Whole World').columns))
+        self.assertEqual(pd.Index, type(al.df_occur_by_ctr('Italy').columns))
+        self.assertIn(2015, al.df_occur_by_ctr('The Whole World').year.values)
+        self.assertNotIn(1970, al.df_occur_by_ctr('Angola').year.values)  # No attacks in Angola in 1970
 
 
     def test_df_occur_by_ctr_allyears(self):
@@ -132,14 +134,14 @@ class UserTest(unittest.TestCase):
         test the df_occur_by_ctr_allyears function in AnalysisAndLinePlot module
         whether the return DataFrame is in expected format with correct values
         '''
-        self.assertEqual(45, len(df_occur_by_ctr_allyears('France')))
-        self.assertEqual(45, len(df_occur_by_ctr_allyears('Australia')))
-        self.assertEqual(45, len(df_occur_by_ctr_allyears('Belgium')))
-        self.assertEqual(45, len(df_occur_by_ctr_allyears('Mexico')))
-        self.assertEqual(45, len(df_occur_by_ctr_allyears('The Whole World')))
-        self.assertEqual(0, df_occur_by_ctr_allyears('Angola').occur[0])
-        self.assertEqual(0, df_occur_by_ctr_allyears('Angola').loc[0, 'occur']
-        self.assertNotIn(2016, df_occur_by_ctr_allyears('United States').year)
+        self.assertEqual(46, len(al.df_occur_by_ctr_allyears('France')))
+        self.assertEqual(46, len(al.df_occur_by_ctr_allyears('Australia')))
+        self.assertEqual(46, len(al.df_occur_by_ctr_allyears('Belgium')))
+        self.assertEqual(46, len(al.df_occur_by_ctr_allyears('Mexico')))
+        self.assertEqual(46, len(al.df_occur_by_ctr_allyears('The Whole World')))
+        self.assertEqual(0, al.df_occur_by_ctr_allyears('Angola').occur[0])
+        self.assertEqual(0, al.df_occur_by_ctr_allyears('Angola').loc[0, 'occur'])
+        self.assertNotIn(2016, al.df_occur_by_ctr_allyears('United States').year.values)
 
 
     def test_gtd_country_names(self):
@@ -147,11 +149,11 @@ class UserTest(unittest.TestCase):
         test whether the gtd_country_names function in AnalysisAndLinePlot module
         returns the correct value
         '''
-        self.assertEqual(207, len(gtd_country_names()))
-        self.assertIn('Greece', gtd_country_names())
-        self.assertIn('United States', gtd_country_names())
-        self.assertNotIn('America', gtd_country_names())
-        self.assertTrue('The Whole World', gtd_country_names()[0])
+        self.assertEqual(207, len(al.gtd_country_names()))
+        self.assertIn('Greece', al.gtd_country_names())
+        self.assertIn('United States', al.gtd_country_names())
+        self.assertNotIn('America', al.gtd_country_names())
+        self.assertTrue('The Whole World', al.gtd_country_names()[0])
 
 
     def test_drop93(self):
@@ -159,14 +161,20 @@ class UserTest(unittest.TestCase):
         test whether the drop93 function in AnalysisAndLinePlot module
         returns a DataFrame without year 1993
         '''
-        df_test93 = pd.DataFrame({'year': 1991, 1992, 1993, 1994, 1995},
-                                  'value': '1', '2', '3', '4', '5'})
-        self.assertNotIn(1993, drop93(df_test93))
-        self.assertIn(1994, drop93(df_test93))
+        df_test93 = pd.DataFrame({'year': [1991, 1992, 1993, 1994, 1995],
+                                  'value': ['1', '2', '3', '4', '5']})
+        self.assertNotIn(1993, al.drop93(df_test93).year.values)
+        self.assertIn(1994, al.drop93(df_test93).year.values)
 
 
-    def 
-
+    def test_df_ctr(self):
+        '''
+        test whether the df_ctr function in AnalysisAndLinePlot module
+        returns a DataFrame only containing the data
+        with the chosen  country
+        '''
+        self.assertIn('Norway', al.df_ctr('Norway').country.values)
+        self.assertNotIn('Sweden', al.df_ctr('Norway').country.values)
 
 
 

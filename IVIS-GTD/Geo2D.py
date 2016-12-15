@@ -29,12 +29,12 @@ def plot_2D_density(Year, MapStyle):
                       the more severe damages had taken place.
     '''
     df = ft.df_sel_btw_years(Year)
-    plt.figure(figsize=(18,10))
+    plt.figure(figsize=(18,10), frameon=False)
 
     m = Basemap('mill')
     m.drawcountries(linewidth=0.5,
                     linestyle='solid',
-                    color='w',
+                    color='white',
                     antialiased=1,
                     ax=None,
                     zorder=None
@@ -47,17 +47,20 @@ def plot_2D_density(Year, MapStyle):
     elif MapStyle == 'Etopo':
         m.etopo()
     else:
-        m.fillcontinents()
-        m.drawmapboundary()
+        m.drawcoastlines(color='w')
+        m.drawcountries(color='w')
+        m.drawstates(color='w')
+        m.fillcontinents(color='lightblue',lake_color='w')
+        m.drawmapboundary(fill_color='w', color='w')
 
     # get latitude and longitude
     lat = ft.make_array(df, 'latitude')
     lon = ft.make_array(df, 'longitude')
 
     x,y = m(lon, lat)
-    m.plot(x, y, 'r.', marker='o', markersize=3, alpha=.8)
+    m.plot(x, y, 'r^', marker='o', markersize=4, alpha=.3)
 
-    plt.title('Global Attack Density Dot Plot: {}-{}'.format(Year[0], Year[1]), size=16)
+    plt.title('Global Attack Density Plot: {}-{}'.format(Year[0], Year[1]), size=16)
     plt.show()
 
 
@@ -86,7 +89,7 @@ def map_style_picker():
     Return a string from ipywidgets' Dropdown box by users' manual pick
     '''
     return Dropdown(options=('Blue Marble', 'Etopo', 'Plain'),
-                    value='Blue Marble',
+                    value='Plain',
                     description='Map Style:',
                     disabled=False,
                     button_style='info')

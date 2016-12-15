@@ -30,6 +30,7 @@ def set_as_index(df, colname):
     '''
     return df.set_index(colname)
 
+
 def df_occur_by_ctr(ctr_name):
     '''
     Parameter
@@ -54,6 +55,7 @@ def df_occur_by_ctr(ctr_name):
     # rename the 'count' column as 'occur' to avoid unexpected potential misusage
     df_yr.columns = ['occur']
     return df_yr.reset_index()
+
 
 def df_occur_by_ctr_allyears(ctr_name):
     '''
@@ -100,7 +102,7 @@ def df_ctr(Country):
     Parameter
         - Country: name of a country or "The Whole World"   | str
     Return
-        a DataFrame with delected features
+        a DataFrame with selected features
     '''
     if Country == 'The Whole World':
         df_ctr = data.load_df()
@@ -145,7 +147,7 @@ def analy_ctr(Country):
     '''
     desc = ctr_stats(Country)
     df_ixby_yr = df_ctr_all(Country).set_index('year')
-    analysis_str = '\
+    analysis_str = '<h1 >\
              Statistical Analysis - Terror Attacks in {}                        \n\
                                   * * *                                         \n\
 --+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--\n\
@@ -170,7 +172,7 @@ During the year 1970 to 2015:                                                   
         3) The standard deviation:           {} \n \
             * kills                          {} \n \
             * wounds                         {} \n \
---+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--\n'
+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--\n</h1>'
     analysis = analysis_str.format(Country,
                                    np.argmax(df_ixby_yr.occur),               # the year with maximum occurrence
                                    int(df_ixby_yr.occur.max()),               # the maximum occurrence
@@ -244,7 +246,7 @@ def color_picker():
     '''
     clr = ColorPicker(concise=False,
                       description='Color:',
-                      value='#41c5f6'
+                      value='#5BC0DE'
                       )
     return clr
 
