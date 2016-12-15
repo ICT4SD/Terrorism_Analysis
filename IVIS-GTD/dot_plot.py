@@ -20,11 +20,12 @@ dot_plot_features = ['country', 'year', 'attacktype', 'casualties']
 gtd_dot = a.gt_df[dot_plot_features]
 
 def attack_type():
+	'''Return a string corresponding to an attack type'''
     attacktypes = list(set(a.gt_df['attacktype']))
     attack_type = widgets.Dropdown(
                                 options=attacktypes,
                                 value='Armed Assault',
-                                description='Number:',
+                                description='Attack Type:',
                                 disabled=False,
                                 button_style='info') # 'success', 'info', 'warning', 'danger' or ''
     return attack_type
@@ -35,7 +36,7 @@ def metric_selection():
     '''
     metric = widgets.ToggleButtons(options={'Occurrences': 'occurrences', 'Casualties': 'casualties'},
                          value='occurrences',
-                         description='Indication',
+                         description='Metric:',
                          disabled=False,
                          button_style='',  # 'success', 'info', 'warning', 'danger' or ''
                          tooltip='Description')
@@ -79,4 +80,10 @@ def create_dot_plot(metric, attacktype, year_range):
         ax.yaxis.grid(True)
 
     sns.despine(left=True, bottom=True)
+
+def Display_Your_Dot_Plot():
+	 '''
+    Allow users to customize the dot plot
+    '''
+    interact(create_dot_plot, metric = metric_selection(), attacktype = attack_type(), year_range = year_interval_slider());
 

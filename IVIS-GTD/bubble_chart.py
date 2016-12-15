@@ -25,7 +25,7 @@ gtd_bubble = feature.replace_series_with_range(gtd_bubble, gtd_bubble['year'], 5
 
 bubble_chart = bcc.Bubble_Chart_Data(gtd_bubble, 'country', 'region', 'year ranges', 'casualties')
 
-bubble_chart_yr = IntSlider(min=1975,max=2015,step=5,value=1995, width = '90%')
+bubble_chart_yr = IntSlider(min=1975,max=2015,step=5,value=1995, width = '90%', description =  'End 5yr Range')
 
 def Display_Your_Bubble_Chart():
     '''
