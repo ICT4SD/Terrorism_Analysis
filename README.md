@@ -11,7 +11,7 @@ This project provides an Interactive Visual Implementation System (IVIS) of the 
 Presentation
 ------------
 
-- [IVIS-GTD Notebook](https://github.com/ICT4SD/Terrorism_Analysis/blob/master/IVIS-GTD/Final%20Draft%20-%20IVIS%20Project%20(Viola's%20Part).ipynb)
+- [IVIS-GTD Notebook](https://github.com/ICT4SD/Terrorism_Analysis/blob/master/IVIS-GTD/Global%20Terrorism%20Analysis%20-%20ICT4SD.ipynb)
 
 
 References
