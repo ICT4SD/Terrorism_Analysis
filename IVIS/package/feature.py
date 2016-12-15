@@ -21,6 +21,7 @@ Test modules should be put under the top level of the project directory.
 @author: Viola
 '''
 import numpy as np
+import pandas as pd
 
 
 def selection():
@@ -67,61 +68,6 @@ def make_log_list(dataset, col_name):
     for i in dataset[col_name].values.tolist():
         new_list.append(np.log(i))
     return np.array(new_list)
-
-#################################################################################
-def find_null(dataset, col_name):
-    '''
-    NOT USING THIS! CAN I DELETE THIS FUNCTION?~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    '''
-    df_null = dataset[dataset[col_name].isnull()]
-    return df_null
-
-
-def get_rid_of_null(dataset, col_name):
-    '''
-    NOT USING THIS! CAN I DELETE THIS FUNCTION?~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    '''
-    df_not_null = dataset[dataset[col_name].notnull()]
-    return df_not_null
-
-
-def one_or_more_yr(dataset):
-    '''
-    NOT USING THIS! CAN I DELETE THIS FUNCTION?~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    '''
-    '''
-    This function allow users to choose whether they want to choose:
-        1) a single year, or
-        2) a multi-year time period
-    to present feature occurrence patterns
-    '''
-    choice = input('To view by a single year, please enter "s"; by multiple continuous years, please enter "m".\nPlease enter: ')
-    if choice.lower() == 's':
-        return select_by_year(dataset)
-    elif choice.lower() == 'm':
-        return select_btw_years(dataset)
-    else:
-        raise ValueError
-
-
-def select_by_year(dataset):
-    '''
-    NOT USING THIS! CAN I DELETE THIS FUNCTION?~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    '''
-    '''allow users to select a dataframe by choosing a year between 1970 to 2015'''
-    year = input('Please choose a year between 1970 to 2015: ')
-    return dataset[(dataset['iyear']) == int(year)]
-
-
-def select_btw_years(dataset):
-    '''
-    NOT USING THIS! CAN I DELETE THIS FUNCTION?~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    '''
-    '''allow users to select a dataframe by choosing starting and ending years between 1970 to 2015'''
-    year1 = input('Please choose the beginning year between 1970 to 2015: ')
-    year2 = input('Please choose the ending year between 1970 to 2015: ')
-    return dataset[dataset.iyear.isin(range(int(year1), int(year2)+1))]
-#################################################################################
 
 def make_five_year_start(dataset):
     '''
@@ -182,6 +128,16 @@ def count_by_groups(grouped):
     counts = grouped.count().dropna()
     counts.columns = ['count']
     return counts
-### Caroline's make_five_year_start function goes here :)
-### Viola, where did your "make 5" function go?
-### It's right above your codes :DDD
+
+def create_range(series_to_group, group_size):
+    '''Turns a series into groups of a specified size'''
+    bins = np.arange(min(series_to_group) - group_size, max(series_to_group) + group_size, group_size)
+    ranges = pd.cut(series_to_group, bins)
+    ranges.name = series_to_group.name + ' ranges'
+    return ranges
+
+def replace_series_with_range(data, series_to_group, group_size):
+    '''Removes year column and merges range column'''
+    ranges = create_range(series_to_group, group_size)
+    data_replaced = pd.concat([data, pd.DataFrame(ranges)], axis = 1).drop(series_to_group.name, 1)
+    return data_replaced
