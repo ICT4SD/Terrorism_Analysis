@@ -13,6 +13,8 @@ Presentation
 
 - [GTA Notebook](https://github.com/violaciao/Global-Terrorism-Analysis/blob/master/GTA/Global%20Terrorism%20Analysis%20-%20ICT4SD.ipynb)
 
+[![View the 1st Release of this project](https://raw.githubusercontent.com/violaciao/Global-Terrorism-Analysis/master/header.jpg)](http://nbviewer.jupyter.org/github/violaciao/Global-Terrorism-Analysis/blob/315b283f926c408fd642ff76112d6db0026bc5e2/GTA/Global%20Terrorism%20Analysis%20-%20ICT4SD.ipynb)
+
 
 
 User Manual
