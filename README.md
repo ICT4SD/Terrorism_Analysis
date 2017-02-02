@@ -18,6 +18,8 @@ Click the image below to see an interactive Demo:
 [![Version 1: View DEMO](https://raw.githubusercontent.com/violaciao/Global-Terrorism-Analysis/master/header.jpg)](http://nbviewer.jupyter.org/github/violaciao/Global-Terrorism-Analysis/blob/315b283f926c408fd642ff76112d6db0026bc5e2/GTA/Global%20Terrorism%20Analysis%20-%20ICT4SD.ipynb)
 
 
+- [Version 2: Currently in process of upgrading to a web-host demo]
+
 
 User Manual
 ------------
@@ -35,3 +37,4 @@ References
 Deliverable
 ----
 December 15th, 2016
+March 15th, 2017
