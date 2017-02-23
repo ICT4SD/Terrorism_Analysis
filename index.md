@@ -1,73 +1,101 @@
 ---
 layout:     post
 header-img: "img/terrorism.jpg"
-title:      "Armed Conflict Analytics"
-subtitle:   "Research on armed conflicts worldwide."
-repository: "ArmedConflict"
+title:      "Global Terrorism Analysis"
+subtitle:   "An interactive tool for visual analysis of global terrorism."
+repository: "Terrorism_Analysis"
 date:       2016-09-20 12:00:00
-author:     "Soumik Mandal, PhD student Information Science, Rutgers University"
+author:     "Xianzhi Cao, Master student of Data Science, New York University"
 goal:		16
 partners:   
-  - partner: "Rutgers University - InfoSeeking Lab"
+  - partner: "New York University - Center for Data Science"
 ---
 Contributors
 ------------
 
-[![The InfoSeeking Lab at the School of Communication & Information - Rutgers University]({{ site.url }}/img/partners/nyu.png)](http://www.infoseeking.org/)
+[![The Center for Data Science - New York University]({{ site.url }}/img/partners/nyu.png)](http://cds.nyu.edu/)
 
-Dr. Chirag Shah - Rutgers University  
-Associate Professor of Information Science  
-Affiliate member of Computer Science  
+**Prof. Greg Watson - New York University**  
+Adjunct Professor Data Science, Center for Data Science  
+Senior Research Scientist at Oak Ridge National Laboratory  
 
-Kevin Albertson - Rutgers University   
-Master's student - Computer Science and Mathematics
+**Xianzhi Cao - New York University**  
+Master's student - Center for Data Science  
+
+**Caroline Roper - New York University**  
+Master's student - Center for Data Science
+
 
 Introduction
 ------------
 
 An armed conflict is defined as a contested incompatibility which concerns government and/or territory where the use of armed force between two parties, of which at least one is the government of a state, results in at least 25 battle-related deaths (Wallensteen, & Sollenberg, 2001). With this proposed study the researcher aims to provide the academic community with the most comprehensive structured event data available on organized violence in the post-1989 world involving, and finally to provide some predictions about conflict dynamics of the locations and the effects of armed violence, in the form of deaths. Since middle-east is the current hot zone, where every day numerous people are losing their lives due to armed conflicts involving governments, sectarian groups, rebels etc., the researcher has decided to contain this proposed study involving only middle-eastern countries.
 
-<div>
-    <a href="https://plot.ly/~Dreamshot/495/" target="_blank" title="Percent of Bachelor Degrees (Women) by Year" style="display: block; text-align: center;"><img src="https://plot.ly/~Dreamshot/495.png" alt="Percent of Bachelor Degrees (Women) by Year" style="max-width: 100%;width: 725px;"  width="725" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" />
-    </a>
-    <script data-plotly="Dreamshot:495"  src="https://plot.ly/embed.js" async></script>
-</div>
 
 
-Literature Review
+Get Started
 -----------------
 
-In the World Commission on Environment and Development (1987), Brundtland has summarized a common view of armed conflict as:
-Nations have often fought to assert or resist control over war materials, energy supplies, land, river basins, sea passages and other key environmental resources.
-Similar view of tussle over control of natural resources as the primary reason behind conflicts has been echoed in many other scholars’ work. Thus, Renner et al. (1991) claimed that “throughout human history, but particularly since the system of sovereign nation states, struggles over access to and control over natural resources ... have been a root cause of tension and conflict” and that “history provides numerous examples of how states and nations were destabilized by environmental collapse leading to famine, migration, and rebellion.” Similarly citing the example of Pacific war (1879-84) between Chile and Peru over guano deposits, Brock (1991) asserted that “control over natural resources has always been important in enabling a country to wage war.”
+Installing 
+Skip this part if you have all the dependencies listed above installed.
+View the Notebook
+- - - - X
+Our project is found here and is part of the UN’s ICT4SD platform. You can view a static version using GitHub’s nbviewer here. However, in order to customize and rerun the visualizations, you will need Jupyter Notebook and all the related packages installed on your computer.
+Using Command-Line
+- - - - X
+We recommend using command-line to perform these tasks. Mac users can access command-line using the Terminal software. Windows users may install and use a terminal emulator such as Git Bash or use the Command Prompt software, which comes installed on most Windows machines. We recommend using Git Bash.
 
-In the early 1970s, there was an emergence of environmental issues on the international
-political agenda, since then there has been increasing concern that environmental disruption is
-likely to increase the number of disputes originating from competition for scarce resources
-(Gleditsch, 1998). This view was echoed in the speech of previous Norwegian Defense Minister
-Johan Jørgen Holst (1989) when he cautioned the world that environmental stress was likely to
-become an increasingly potent contributing factor to major conflicts between nations. Similarly,
-he then Secretary General of the Habitat conference in 1996 told participants that “the scarcity of
-water is replacing oil as a flashpoint for conflict between nations” (Lonergan, 1997).
-More recent variety of territorial conflict concerns the economic zone, a matter of dispute
-between most countries which are at the close vicinity of the sea and where tiny islands can
-sometimes become monumental national interest because of their consequences for controlling the
-shipping lane at sea. Thus, there are no less than six claimants to all or part of the Spratly Islands
-in the South China Sea (Denoon & Brams, 1997), where the use of force anytime cannot be ruled
-out.
+Install Python
+- - - - X
+You will need to have Python installed before you can use Jupyter Notebook. We recommend using Anaconda, an open-source distribution of Python that conveniently includes Jupyter Notebook and most of the packages you’ll need.
 
-As the above literature review suggest, all these previous studies has addressed conflict as
-the outcome variable and focused on identification of the primary factors behind the conflicts.
-However, one of the significant drawback in this line of work is that the duration of the conflict is
-not taken into account. Essentially, these studies do not differentiate between prolonged conflicts
-between nations (e.g., Iraq-Iran war, 1980-1988) and lone-wolf terror attack (e.g., Toulouse terror
-attack, 2012). To overcome this, the present study proposes to consider the duration of the conflict as the primary outcome variable and hopes to identify if the geographical location is a contributing
-factor behind the duration of the conflict.
+Check if you already have Anaconda
+If you think you may already have Anaconda on your computer, you can easily check using command-line:
+conda --version
+This command will verify which version of Anaconda you have. The creators of this project used Anaconda 4.2.9.
 
-<div>
-    <a href="https://plot.ly/~prismane/129/" target="_blank" title="File5 - GDGT Survey" style="display: block; text-align: center;"><img src="https://plot.ly/~prismane/129.png" alt="File5 - GDGT Survey" style="max-width: 100%;width: 550px;"  width="550" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="prismane:129"  src="https://plot.ly/embed.js" async></script>
-</div>
+Download Anaconda
+If you don’t have Anaconda, go here to download it. Please select the 3.5 version. https://www.continuum.io/downloads
+
+Installing Required Packages
+Anaconda comes with most packages required for our project. Matplotlib, Numpy, Pandas, Scipy, and Ipywidgets are part of the Anaconda installer.
+Update Ipywidgets
+Some recent changes have been made to ipywidgets. To update ipywidgets, use the commands:
+conda update ipywidgets
+and
+jupyter nbextension enable --py --sys-prefix widgetsnbextension
+Install standard packages
+Use the following commands in command-line to install Seaborn and Folium:
+pip install Seaborn
+pip install Folium
+Alternatively, use Anaconda navigator to install Seaborn and Folium:
+Open Anaconda Navigator
+Choose Environments
+Select the kernel you wish to view (most likely, the root kernel)
+Select “not installed” on the far left
+Search for Seaborn or Folium
+Select the package, and select “Apply.”
+Install Basemap
+The official guide to installing Basemap is here. There are three options for how to download Basemap:
+Option 1: If you have a windows computer and Python 3.3 or earlier, you can directly use the installers provided here.
+Option 2: If you have a windows computer, but you have Python 3.4 or beyond, you can use the “unofficial” installers here.
+Search for “basemap.” The file names contain “32” or “64” depending on whether it’s appropriate for a 32-bit or 64-bit version of Windows. The file names also have a number representing the version of Python, so a filename containing “cp35” is compatible with Python 3.5.
+Download the appropriate file for your system. Now use the following command:
+Pip install ‘Downloads\basemap-1.0.8-cp35-none-win_amd64.whl’
+The expression in quotation marks should be the full path where the download is saved.
+You should get a message saying “successfully installed basemap.”
+Option 3: You can download the source code and follow the instructions in the video tutorial.
+Without Required Packages
+Our program is not designed to run on a computer that does not have Python 3, numpy, pandas, scipy, iwidgets, folium, and seaborn. These requirements are fundamental for all of our visualizations.
+Without Basemap, the density plot will not render, but the other visualizations will be unaffected.
+
+Installing Jupyter Notebook
+Jupyter Notebook is automatically installed along with Anaconda. Full instructions for using Jupyter Notebook can be found here. You can access jupyter notebook by typing in command line:
+jupyter notebook
+You can also open Jupyter notebook with Anaconda Navigator.
+
+
+[![Statistical Overview]({{ site.url }}/img/project%20-%20GTA/stats-overview.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/project%20-%20GTA/stats-overview.png)
 
 Dataset
 ------------
