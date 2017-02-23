@@ -1,42 +1,24 @@
-# Global Terrorism Analysis
+#Clean Blog by Start Bootstrap - Jekyll Version
 
-A project for NYU Center for Data Science and the United Nations ICT4SD Program.
+The official Jekyll version of the Clean Blog theme by [Start Bootstrap](http://startbootstrap.com/).
 
-Project Objective
-------------
+###[View Live Demo &rarr;](http://blackrockdigital.github.io/startbootstrap-clean-blog-jekyll/)
 
-This project provides an interactive visualization platform of the global terrorism attacks, to better support the researchers with deeper understandings of the patterns and regularities of the current world terrorism conflicts. This system seeks and presents potential correlations, clustering performances and feature rankings of different countries and parties, associated with types of attacks and casualties.
+## Before You Begin
 
+In the _config.yml file, the base URL is set to /startbootstrap-clean-blog-jekyll which is this themes gh-pages preview. It's recommended that you remove the base URL before working with this theme locally!
 
-Results
-------------
+It should look like this:
+`baseurl: ""`
 
-- [Version 1: GTA Notebook](https://github.com/violaciao/Global-Terrorism-Analysis/blob/master/GTA/Global%20Terrorism%20Analysis%20-%20ICT4SD.ipynb)
+## What's Included
 
-Click the image below to see an interactive Demo:
+A full Jekyll environment is included with this theme. If you have Jekyll installed, simply run `jekyll serve` in your command line and preview the build in your browser. You can use `jekyll serve --watch` to watch for changes in the source files as well.
 
-[![Version 1: View DEMO](https://raw.githubusercontent.com/violaciao/Global-Terrorism-Analysis/master/header.jpg)](http://nbviewer.jupyter.org/github/violaciao/Global-Terrorism-Analysis/blob/315b283f926c408fd642ff76112d6db0026bc5e2/GTA/Global%20Terrorism%20Analysis%20-%20ICT4SD.ipynb)
-  
-  
-    
-- Version 2: Currently in process of upgrading to a web-host demo
-  
-  
-  
-User Manual
-------------
+A Grunt environment is also included. There are a number of tasks it performs like minification of the JavaScript, compiling of the LESS files, adding banners to apply the MIT license, and watching for changes. Run the grunt default task by entering `grunt` into your command line which will build the files. You can use `grunt watch` if you are working on the JavaScript or the LESS.
 
-- [GTA User Manual](https://docs.google.com/document/d/1KNxP-8Ccey1tM1sOBJRB7VyB3rjtPe2gbDFlHtD_iCk/edit?invite=CJDxrtgM&ts=58545934#)
+You can run `jekyll serve --watch` and `grunt watch` at the same time to watch for changes and then build them all at once.
 
+## Support
 
-References
-------------
-
-- [Global Terrorism Database (GTD)](https://www.start.umd.edu/gtd/)
-- country.geo.json  
-
-
-Deliverable
-----
-December 15th, 2016  
-March 15th, 2017
+Visit Clean Blog's template overview page on Start Bootstrap at http://startbootstrap.com/template-overviews/clean-blog/ and leave a comment, email feedback@startbootstrap.com, or open an issue here on GitHub for support.
