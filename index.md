@@ -40,7 +40,7 @@ Get Started
 
 On this page we present you a static version of how this tool looks like. However, in order to customize and interact with all the visualizations, it is recommended to use Jupyter Notebook with related packages installed.
 
-**Dependencies**
+**Dependencies**  
   Python 3.3+  
     
 **Mandatory dependencies**  
@@ -56,10 +56,10 @@ On this page we present you a static version of how this tool looks like. Howeve
   Json  
 
 We have presented a detailed user manual for users lacking the above dependencies.  
-- [GTA User Manual](https://docs.google.com/document/d/1KNxP-8Ccey1tM1sOBJRB7VyB3rjtPe2gbDFlHtD_iCk/edit?invite=CJDxrtgM&ts=58545934#)
+- [GTA User Manual](https://docs.google.com/document/d/1KNxP-8Ccey1tM1sOBJRB7VyB3rjtPe2gbDFlHtD_iCk)
 
 
-[![Statistical Overview]({{ site.url }}/img/project - GTA/stats-overview.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/project%20-%20GTA/stats-overview.png)
+[![Statistical Overview]({{ site.url }}/img/project%20-%20GTA/stats-overview.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/project%20-%20GTA/stats-overview.png)
 
 Dataset
 ------------
