@@ -41,41 +41,56 @@ Get Started
 On this page we present you a static version of how this tool looks like. However, in order to customize and interact with all the visualizations, it is recommended to use Jupyter Notebook with related packages installed.
 
 **Dependencies**  
-  Python 3.3+  
+- Python 3.3+  
     
 **Mandatory dependencies**  
-  Numpy  
-  Pandas  
-  Matplotlib  
-  Seaborn  
-  Scipy  
-  Basemap  
-  Folium  
-  Jupyter Notebook  
-  Ipywidgets  
-  Json  
+- Numpy  
+- Pandas  
+- Matplotlib  
+- Seaborn  
+- Scipy  
+- Basemap  
+- Folium  
+- Jupyter Notebook  
+- Ipywidgets  
+- Json  
 
 We have presented a detailed user manual for users lacking the above dependencies.  
 - [GTA User Manual](https://docs.google.com/document/d/1KNxP-8Ccey1tM1sOBJRB7VyB3rjtPe2gbDFlHtD_iCk)
 
 
-[![Statistical Overview]({{ site.url }}/img/project%20-%20GTA/stats-overview.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/project%20-%20GTA/stats-overview.png)
-
 Dataset
 ------------
-The dataset used for this study is Uppsala Conflict Data Program Georeferenced Event Data (UCDP GED) version 5.0 (Croicu, & Sundberg, 2016). The UCDP GED dataset is manually curated and compiled, with automatic assistance in data retrieval, filtering, data storage, and manipulation, as well as data validation. All the entries in the dataset are collected from three sets of sources:
-- global newswire reporting.
-- global monitoring and translation of local news performed by the BBC.
-- the secondary sources such as local media, NGO and IGO reports, field reports, books, etc.
+The dataset used for this study is Global Terroriam Database (GTD). The Global Terrorism Database (GTD) is an open-source database including information on terrorist events around the world from 1970 through 2015 (with annual updates planned for the future).
+- Contains information on over 150,000 terrorist attacks  
+- Includes information on more than 75,000 bombings, 17,000 assassinations, and 9,000 kidnappings since 1970  
+- Includes information on at least 45 variables for each case, with more recent incidents including information on more than 120 variables  
+- Over 4,000,000 news articles and 25,000 news sources were reviewed to collect incident data from 1998 to 2015 alone  
+  
+<blockquote><i>National Consortium for the Study of Terrorism and Responses to Terrorism (START). (2016). <i>Global Terrorism Database</i>. Retrieved from https://www.start.umd.edu/gtd </i> </blockquote>
 
-The basic unit of analysis in the UCDP GED dataset is the <i>“event”</i>, an individual incident or phenomenon of lethal violence occurring at a given time and place. More specifically Croicu et al. defined an <i>event</i> as:
 
-<blockquote><i>"An incident where armed force was used by an organised actor against another organized actor, or against civilians, resulting in at least 1 direct death at a specific location and a specific date (p-2)."</i> </blockquote>
-
-Only events linkable to a UCDP/Peace Research Institute Oslo (PRIO) Armed Conflict, or a UCDP Non-State Conflict or a UCDP One-Sided Violence instance are included in this dataset. Events are included for the entire period, i.e. both for the years when such conflicts were active and for the years when such conflicts where not active.
-
-The maximum (best) spatial resolution of the UCDP GED dataset is the individual village or town. The dataset is fully geocoded meaning, the coordinates of the places for each event, with its longitude and latitude values are available in the dataset. The maximum (best) temporal resolution of the dataset is the day.
-The UCDP GED version 5.0 dataset contains 1,28,264 events. It is a global dataset that covers occurrences of events in the entire Globe (excluding Syria) between 1st January 1989 and 31st December 2015. However, for this study, since we are focusing only on Middle East countries, we have taken only a subset of the UCDP GED dataset consisting events from Middle East countries only. Some of the fields which were deemed to be unnecessary/redundant for this study were also removed from the UCDP dataset. As result, the final dataset used for this study consists of 16646 events. Below is a quick overview of variables that are included as part of the dataset used in this study.
+The GTD was designed to gather a wide variety of etiological and situational variables pertaining to each terrorist incident. Depending on availability of information, the database records up to 120 separate attributes of each incident, including approximately 75 coded variables that can be used for statistical analysis. These are collected under eight broad categories, as identified in the GTD Codebook, and include, whenever possible:  
+  
+<b>a)incident date: </b>  
+  
+region
+country
+state/province
+city
+latitude and longitude (beta)
+perpetrator group name
+tactic used in attack
+nature of the target (type and sub-type, up to three targets)
+identity, corporation, and nationality of the target (up to three nationalities)
+type of weapons used (type and sub-type, up to three weapons types)
+whether the incident was considered a success
+if and how a claim(s) of responsibility was made
+amount of damage, and more narrowly, the amount of United States damage
+total number of fatalities (persons, United States nationals, terrorists)
+total number of injured (persons, United States nationals, terrorists)
+indication of whether the attack is international or domestic
+Other variables provide information unique to specific types of cases, including kidnappings, hostage incidents, and hijackings.
 
  <b>a) Relid: </b> A quick machine parse-able string key describing the content of each event. The key is constructed using the abbreviation of the country name (for instance AFG for Afghanistan), the calendar year, the type of violence, the dyad or actor ID and a counter.
 This variable is also a unique identifier for each event in the entire dataset.
@@ -104,6 +119,10 @@ So, from the above equation, the minimum duration of each conflict is one day.
 
 Analysis
 ------------
+
+[![Statistical Overview]({{ site.url }}/img/project%20-%20GTA/stats-overview.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/project%20-%20GTA/stats-overview.png)
+
+
 To analyze the data, we will start with some descriptive statistics of the data. As, the boxplot in the next page suggests (Fig. 1) that among all the middle eastern countries Egypt faced conflicts for longest span of time, whereas countries such as Bahrain, Qatar, and United Arab Emirates faced conflicts for shortest period of time.
 
 <table border="1">
