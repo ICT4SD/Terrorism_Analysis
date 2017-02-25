@@ -4,7 +4,7 @@ header-img: "img/terrorism.jpg"
 title:      "Global Terrorism Analysis"
 subtitle:   "An interactive tool for visual analysis of global terrorism."
 repository: "Terrorism_Analysis"
-date:       2016-09-20 12:00:00
+date:       2017-02-24 12:00:00
 author:     "Xianzhi Cao, Master student of Data Science, New York University"
 goal:		16
 partners:   
@@ -29,70 +29,34 @@ Master's student - Center for Data Science
 Introduction
 ------------
 
-An armed conflict is defined as a contested incompatibility which concerns government and/or territory where the use of armed force between two parties, of which at least one is the government of a state, results in at least 25 battle-related deaths (Wallensteen, & Sollenberg, 2001). With this proposed study the researcher aims to provide the academic community with the most comprehensive structured event data available on organized violence in the post-1989 world involving, and finally to provide some predictions about conflict dynamics of the locations and the effects of armed violence, in the form of deaths. Since middle-east is the current hot zone, where every day numerous people are losing their lives due to armed conflicts involving governments, sectarian groups, rebels etc., the researcher has decided to contain this proposed study involving only middle-eastern countries.
+This project aims to provide users with an interactive tool to better understand the pattern of global terrorism attacks.
 
+Our project visualizes the Global Terrorism Database from various perspectives and allows the user to explore the data by customizing our visualizations to meet their needs. Terrorism is an increasing concern despite recent progress along other development goals. The Global Terrorism Database provides a rich resource of information about how terrorism has changed over time and differs by region or country. Our project seeks to make the insights from the data discoverable to all.
+This project is part of the United Nations’ ICT4SD (Information and Communications Technology for Sustainable Development) program in the OICT department.
 
 
 Get Started
 -----------------
 
-Installing 
-Skip this part if you have all the dependencies listed above installed.
-View the Notebook
-- - - - X
-Our project is found here and is part of the UN’s ICT4SD platform. You can view a static version using GitHub’s nbviewer here. However, in order to customize and rerun the visualizations, you will need Jupyter Notebook and all the related packages installed on your computer.
-Using Command-Line
-- - - - X
-We recommend using command-line to perform these tasks. Mac users can access command-line using the Terminal software. Windows users may install and use a terminal emulator such as Git Bash or use the Command Prompt software, which comes installed on most Windows machines. We recommend using Git Bash.
+On this page we present you a static version of how this tool looks like. However, in order to customize and interact with all the visualizations, it is recommended to use Jupyter Notebook with related packages installed.
 
-Install Python
-- - - - X
-You will need to have Python installed before you can use Jupyter Notebook. We recommend using Anaconda, an open-source distribution of Python that conveniently includes Jupyter Notebook and most of the packages you’ll need.
+**Dependencies**
+  Python 3.3+  
+    
+**Mandatory dependencies**
+  Numpy
+  Pandas
+  Matplotlib
+  Seaborn
+  Scipy
+  Basemap
+  Folium
+  Jupyter Notebook
+  Ipywidgets
+  Json
 
-Check if you already have Anaconda
-If you think you may already have Anaconda on your computer, you can easily check using command-line:
-conda --version
-This command will verify which version of Anaconda you have. The creators of this project used Anaconda 4.2.9.
-
-Download Anaconda
-If you don’t have Anaconda, go here to download it. Please select the 3.5 version. https://www.continuum.io/downloads
-
-Installing Required Packages
-Anaconda comes with most packages required for our project. Matplotlib, Numpy, Pandas, Scipy, and Ipywidgets are part of the Anaconda installer.
-Update Ipywidgets
-Some recent changes have been made to ipywidgets. To update ipywidgets, use the commands:
-conda update ipywidgets
-and
-jupyter nbextension enable --py --sys-prefix widgetsnbextension
-Install standard packages
-Use the following commands in command-line to install Seaborn and Folium:
-pip install Seaborn
-pip install Folium
-Alternatively, use Anaconda navigator to install Seaborn and Folium:
-Open Anaconda Navigator
-Choose Environments
-Select the kernel you wish to view (most likely, the root kernel)
-Select “not installed” on the far left
-Search for Seaborn or Folium
-Select the package, and select “Apply.”
-Install Basemap
-The official guide to installing Basemap is here. There are three options for how to download Basemap:
-Option 1: If you have a windows computer and Python 3.3 or earlier, you can directly use the installers provided here.
-Option 2: If you have a windows computer, but you have Python 3.4 or beyond, you can use the “unofficial” installers here.
-Search for “basemap.” The file names contain “32” or “64” depending on whether it’s appropriate for a 32-bit or 64-bit version of Windows. The file names also have a number representing the version of Python, so a filename containing “cp35” is compatible with Python 3.5.
-Download the appropriate file for your system. Now use the following command:
-Pip install ‘Downloads\basemap-1.0.8-cp35-none-win_amd64.whl’
-The expression in quotation marks should be the full path where the download is saved.
-You should get a message saying “successfully installed basemap.”
-Option 3: You can download the source code and follow the instructions in the video tutorial.
-Without Required Packages
-Our program is not designed to run on a computer that does not have Python 3, numpy, pandas, scipy, iwidgets, folium, and seaborn. These requirements are fundamental for all of our visualizations.
-Without Basemap, the density plot will not render, but the other visualizations will be unaffected.
-
-Installing Jupyter Notebook
-Jupyter Notebook is automatically installed along with Anaconda. Full instructions for using Jupyter Notebook can be found here. You can access jupyter notebook by typing in command line:
-jupyter notebook
-You can also open Jupyter notebook with Anaconda Navigator.
+To see how to 
+- [GTA User Manual](https://docs.google.com/document/d/1KNxP-8Ccey1tM1sOBJRB7VyB3rjtPe2gbDFlHtD_iCk/edit?invite=CJDxrtgM&ts=58545934#)
 
 
 [![Statistical Overview]({{ site.url }}/img/project%20-%20GTA/stats-overview.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/project%20-%20GTA/stats-overview.png)
