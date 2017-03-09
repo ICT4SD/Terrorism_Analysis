@@ -205,10 +205,7 @@ Also if we list the countries according to the frequency of violence faced in th
 
 The basic intuition from the statistics should be, the places which saw largest number of violence and for longest period of time should count largest number of casualties. However, if we plot the co-ordinates (longitude and latitude) of each conflict area against the number of estimated deaths (Fig. 2), the map suggests apart from countries which are more prone to conflicts (such as Iraq) some of the other countries (such as Kuwait) with less number of conflicts also faced large number of casualties.
 
-<div>
-    <a href="https://plot.ly/~mandal.soumik/1/" target="_blank" title="armedConflict" style="display: block; text-align: center;"><img src="https://plot.ly/~mandal.soumik/1.png" alt="armedConflict" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="mandal.soumik:1" src="https://plot.ly/embed.js" async></script>
-</div>
+[![Choropleth Map]({{ site.url }}/img/demo_static/choro.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/choro.png)
 
 
 For this project, we are interested in the hypothetical relation between the duration of conflicts (the number of days one conflict lasts) and the countries as well as the relation between the number of casualties and the countries. So, the research questions we intend to find out are:
@@ -222,6 +219,16 @@ So, the corresponding null hypothesis for the above two relations are respective
 - <b>H2:</b> There is no significant difference between the countries on number of casualties suffered in conflicts.
 
 So, for this research design, the Duration and High_est are our outcome variables (DVs) whereas the Country is our independent variables (IV). Since we have more than one DV in this case, we will perform a multivariate analysis of variance (MANOVA) to test the significance of IV on predicting the DVs.
+
+
+[![Heat Map]({{ site.url }}/img/demo_static/heat.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/heat.png)
+
+
+
+[![Bubble Chart]({{ site.url }}/img/demo_static/bubble.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/bubble.png)
+
+
+[![Dot Plot]({{ site.url }}/img/demo_static/dotplot.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/dotplot.png)
 
 Results
 ------------
