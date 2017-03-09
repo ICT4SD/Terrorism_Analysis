@@ -121,7 +121,7 @@ So, from the above equation, the minimum duration of each conflict is one day.
 Analysis
 ------------
 
-[![Statistical Overview]({{ site.url }}/img/project%20-%20GTA/stats-overview.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/project%20-%20GTA/stats-overview.png)
+[![Statistical Overview]({{ site.url }}/img/demo_static/lineplot.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/lineplot.png)
 
 
 To analyze the data, we will start with some descriptive statistics of the data. As, the boxplot in the next page suggests (Fig. 1) that among all the middle eastern countries Egypt faced conflicts for longest span of time, whereas countries such as Bahrain, Qatar, and United Arab Emirates faced conflicts for shortest period of time.
