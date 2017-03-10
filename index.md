@@ -72,9 +72,14 @@ The dataset used for this study is Global Terroriam Database (GTD). The Global T
 
 The GTD was designed to gather a wide variety of etiological and situational variables pertaining to each terrorist incident. Depending on availability of information, the database records up to 120 separate attributes of each incident, including approximately 75 coded variables that can be used for statistical analysis. These are collected under eight broad categories, as identified in the GTD Codebook, and include, whenever possible:  
   
- <b>1) Incident date: </b>  
+ <b>1) GTD ID and Date: </b>  
+ - Eventid: Incidents from the GTD follow a 12‐digit Event ID system. 
+ - Year, Month, Day, Approximate Date
+ - Extended Incident: whether the duration of an incident extended more than 24 hours or not.
   
- <b>2) Region: </b>  
+ <b>2) Incident Information: </b>  
+ - Incident Summary: A brief narrative summary of the incident, noting the “when, where, who, what, how, and why.”
+ - 
    
 country
 state/province
