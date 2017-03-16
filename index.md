@@ -129,6 +129,7 @@ To begin with our data analysis journey, we will start with the time series stat
 |Year with Most Attacks and Casualties  |     2014     |
 |Total Number of Terror Attacks in 2014 |    16840     |
 |Total Number of Casualties in 2014     |    84089     |
+
 <b>Table 1</b>: World Terrorism Attack Overview
 
 For this specific area selected (in this case, the whole world), the Occurrences of Terrorism Attacks analysis is shown in <b> Table 2</b>.
@@ -138,6 +139,7 @@ For this specific area selected (in this case, the whole world), the Occurrences
 | Total Number    |      156772     |
 | Annual Average  |       3483      |
 | 1 Unit Std      |      3441.55    |
+
 <b>Table 2</b>: Occurrence Analysis for the Chosen Area: Worldwide
 
 
