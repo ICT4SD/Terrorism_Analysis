@@ -34,6 +34,7 @@ This project aims to provide users with an interactive tool to better understand
 Our project visualizes the Global Terrorism Database from various perspectives and allows the user to explore the data by customizing our visualizations to meet their needs. Terrorism is an increasing concern despite recent progress along other development goals. The Global Terrorism Database provides a rich resource of information about how terrorism has changed over time and differs by region or country. Our project seeks to make the insights from the data discoverable to all.
 This project is part of the United Nations’ ICT4SD (Information and Communications Technology for Sustainable Development) program in the OICT department.
 
+***
 
 Get Started
 -----------------
@@ -58,6 +59,7 @@ On this page we present you a static version of how this tool looks like. Howeve
 We have presented a detailed user manual for users lacking the above dependencies.  
 - [GTA User Manual](https://docs.google.com/document/d/1KNxP-8Ccey1tM1sOBJRB7VyB3rjtPe2gbDFlHtD_iCk)
 
+***
 
 Dataset
 ------------
@@ -111,8 +113,8 @@ The GTD was designed to gather a wide variety of etiological and situational var
  
  <b>9) Additional Information and Sources: </b>
   - Additional relevant details about the attack, including International‐ Logistical, International‐ Miscellaneous, and sources.
-
-
+   
+***
 
 Analysis
 ------------
