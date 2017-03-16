@@ -90,7 +90,7 @@ The GTD was designed to gather a wide variety of etiological and situational var
  
  <b>4) Attack Information: </b>
  - Attack Type: 8 categories + unknown. 
-    > "Assassination, Hijacking, Kidnapping, Barricade Incident, Bombing/Explosion, Armed Assault, Unarmed Assault, Facility/Infrastructure Attack, and Unknown".
+    > Assassination, Hijacking, Kidnapping, Barricade Incident, Bombing/Explosion, Armed Assault, Unarmed Assault, Facility/Infrastructure Attack, and Unknown.
  - Suicide Attack
  
  <b>5) Weapon Information: </b>
@@ -137,12 +137,22 @@ For this specific area selected (in this case, the whole world), the Occurrences
 
 <b>Table 2</b>: Occurrence Analysis for the Chosen Area: Worldwide
 
-|                 |   Occurrences   |
+|     Feature     |   Occurrences   |
 | --------------- | --------------- |
 | Total Number    |      156772     |
 | Annual Average  |       3483      |
-| 1 Unit Std      |      3441.55    |
+| 1 Unit STD      |      3441.55    |
 
+And <b>Table 3</b> shows a statistical analysis of Casualties around the whole world during 1970 to 2015.
+
+|     Feature       |     Casualties    |
+| ----------------- | ----------------- |
+| Total Fatalities  |       348215      |
+| Total Wounds      |       440002      |
+| Annual Fatalities |        7738       |
+| Annual Wounds     |        9777       |
+| Fatalites STD     |       8447.86     |
+| Wounds STD        |       10357.73    |
 
 
 
