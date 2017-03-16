@@ -122,19 +122,29 @@ Analysis
 [![Statistical Overview]({{ site.url }}/img/demo_static/lineplot.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/lineplot.png)
 
 
-To analyze the data, we will start with some descriptive statistics of the data. As, the boxplot in the next page suggests (Fig. 1) that among all the middle eastern countries Egypt faced conflicts for longest span of time, whereas countries such as Bahrain, Qatar, and United Arab Emirates faced conflicts for shortest period of time.
+To begin with our data analysis journey, we will start with the time series statistical overview from 1970 to 2015, by customising the country (or the whole world) and the feature selection. Above is an example of the terrorism attack occurrence trend overview within the whole world. A upward going trend can be observed straightforwardly, with a peak in the year 2014. Below is a detailed statistical analysis.
 
-|                 World Overview               |
-| -------------------------------------------- |
-|During the year 1970 to 2015:                 | 
-| -------------------------------------------- |
-|The year with the most attacks |      2014    |
+|             World Overview (1970 - 2015)             |
+| ---------------------------------------------------- |
+|The Year with the Most Attacks         |     2014     |
+|Total Number of Terror Attacks in 2014 |    16840     |
+|The Year with the Most Casulties       |     2014     |
+|Total Number of Casualties in 2014     |    84089     |
+
+<b>Table 1</b>: World Terrorism Attack Overview
+
+For this specific country selected ( in this case, the whole world), the Occurrences of Terrorism Attacks analysis is shown below:
+
+|                 |   Occurrences   |
+| --------------- | --------------- |
+| Total Number    |      156772     |
+| Annual Average  |       3483      |
+| 1 Unit Std      |      3441.55    |
+
+<b>Table 2</b>: Occurrence Analysis for the Chosen Area: Worldwide
 
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
 
 <table border="1">
 <tr>
