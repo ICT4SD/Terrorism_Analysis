@@ -57,7 +57,7 @@ On this page we present you a static version of how this tool looks like. Howeve
 - Json  
 
 We have presented a detailed user manual for users lacking the above dependencies.  
-- [<span style="color:orange;">GTA User Manual</span>](https://docs.google.com/document/d/1KNxP-8Ccey1tM1sOBJRB7VyB3rjtPe2gbDFlHtD_iCk)
+- [<span style="color:skyblue;">GTA User Manual</span>](https://docs.google.com/document/d/1KNxP-8Ccey1tM1sOBJRB7VyB3rjtPe2gbDFlHtD_iCk)
 
 ***
 
@@ -90,11 +90,11 @@ The GTD was designed to gather a wide variety of etiological and situational var
  
  <b>4) Attack Information: </b>
  - Attack Type: 8 categories + unknown. 
-    > Assassination, Hijacking, Kidnapping, Barricade Incident, Bombing/Explosion, Armed Assault, Unarmed Assault, Facility/Infrastructure Attack, and Unknown.
+    - Assassination, Hijacking, Kidnapping, Barricade Incident, Bombing/Explosion, Armed Assault, Unarmed Assault, Facility/Infrastructure Attack, and Unknown.
  - Suicide Attack
  
  <b>5) Weapon Information: </b>
- - Weapon Type: 13 categories.
+ - Weapon Type: 12 categories + unknown.
  - Several sub weapon types.
  
  <b>6) Target/Victim Information: </b>
