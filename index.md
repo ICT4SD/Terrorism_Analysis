@@ -137,15 +137,16 @@ For this specific area selected (in this case, the whole world), the Occurrences
 
 <b>Table 2</b>: Occurrence Analysis for the Chosen Area: Worldwide
 
-|     Features     |   Occurrences   |
+|     Features    |   Occurrences   |
 | --------------- | --------------- |
 | Total Number    |      156772     |
 | Annual Average  |       3483      |
 | 1 Unit STD      |      3441.55    |
 
-And <b>Table 3</b> shows a statistical analysis of Casualties around the whole world during 1970 to 2015.
+Also, if we select "Casualties" as the target feature, we can get a detailed statistical analysis on the total, annual and variational status of the global terrorism attacks. <b>Table 3</b> shows a statistical analysis of Casualties around the whole world during 1970 to 2015.
 
-|     Features       |     Casualties    |
+<!--
+|     Features      |     Casualties    |
 | ----------------- | ----------------- |
 | Total Fatalities  |       348215      |
 | Total Wounds      |       440002      |
@@ -153,9 +154,7 @@ And <b>Table 3</b> shows a statistical analysis of Casualties around the whole w
 | Annual Wounds     |        9777       |
 | Fatalites STD     |       8447.86     |
 | Wounds STD        |       10357.73    |
-
-
-
+-->
 
 <b>Table 3</b> Casualties Analysis: Worldwide (1970-2015)
 <table border="1">
@@ -197,12 +196,13 @@ And <b>Table 3</b> shows a statistical analysis of Casualties around the whole w
 </table>
 
 
-Also if we list the countries according to the frequency of violence faced in this time period, the result (Table 1) shows countries such as Iraq and Turkey are the most frequent to such conflicts, whereas Qatar and United Arab Emirates have faced least amount of conflicts.
+<!--Also if we list the countries according to the frequency of violence faced in this time period, the result (Table 1) shows countries such as Iraq and Turkey are the most frequent to such conflicts, whereas Qatar and United Arab Emirates have faced least amount of conflicts.
 
-The basic intuition from the statistics should be, the places which saw largest number of violence and for longest period of time should count largest number of casualties. However, if we plot the co-ordinates (longitude and latitude) of each conflict area against the number of estimated deaths (Fig. 2), the map suggests apart from countries which are more prone to conflicts (such as Iraq) some of the other countries (such as Kuwait) with less number of conflicts also faced large number of casualties.
+The basic intuition from the statistics should be, the places which saw largest number of violence and for longest period of time should count largest number of casualties. However, if we plot the co-ordinates (longitude and latitude) of each conflict area against the number of estimated deaths (Fig. 2), the map suggests apart from countries which are more prone to conflicts (such as Iraq) some of the other countries (such as Kuwait) with less number of conflicts also faced large number of casualties. -->
 
 [![Choropleth Map]({{ site.url }}/img/demo_static/choro.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/choro.png)
 
+In order to extract the information on the severity level of terrorism attack within certain selected year or time period, the Choropleth map above is the ideal visualization tool to realize it. 
 
 For this project, we are interested in the hypothetical relation between the duration of conflicts (the number of days one conflict lasts) and the countries as well as the relation between the number of casualties and the countries. So, the research questions we intend to find out are:
 
@@ -214,7 +214,7 @@ So, the corresponding null hypothesis for the above two relations are respective
 - <b>H1:</b> There is no significant difference between the countries on number of days each conflict lasts in each individual country.
 - <b>H2:</b> There is no significant difference between the countries on number of casualties suffered in conflicts.
 
-So, for this research design, the Duration and High_est are our outcome variables (DVs) whereas the Country is our independent variables (IV). Since we have more than one DV in this case, we will perform a multivariate analysis of variance (MANOVA) to test the significance of IV on predicting the DVs.
+So, for this research design, the Duration and High_est are our outcome variables (DVs) whereas the Country is our independent variables (IV). Since we have more than one DV in this case, we will perform a multivariate analysis of variance (MANOVA) to test the significance of IV on predicting the DVs. 
 
 
 [![Heat Map]({{ site.url }}/img/demo_static/heat.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/heat.png)
