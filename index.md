@@ -123,6 +123,7 @@ Analysis
 
 
 To begin with our data analysis journey, we will start with the time series statistical overview from 1970 to 2015, by customising the country (or the whole world) and the feature selection. Above is an example of the terrorism attack occurrence trend overview within the whole world. A upward going trend can be observed straightforwardly, with a peak in the year 2014. <b>Table 1</b> is a detailed statistical analysis.
+
 <b>Table 1</b>: World Terrorism Attack Overview
 
 |             World Overview (1970 - 2015)             |
@@ -133,6 +134,7 @@ To begin with our data analysis journey, we will start with the time series stat
 
 
 For this specific area selected (in this case, the whole world), the Occurrences of Terrorism Attacks analysis is shown in <b> Table 2</b>.
+
 <b>Table 2</b>: Occurrence Analysis for the Chosen Area: Worldwide
 
 |                 |   Occurrences   |
