@@ -222,8 +222,20 @@ For this research design, the countrywide variations and severities are both sho
 
 [![Bubble Chart]({{ site.url }}/img/demo_static/bubble.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/bubble.png)
 
+In order to analysis the influences caused by the terrorism attackes, we examine the dependent relations between the occurrences and casualties for each country, taking 5 years as our analytical stage length. The Bubble Chart above presents an ideal visualization for this aim.
+
+The larger the size of the bubble, the more total terrorism attacks has taken in the place. By slding the year selection tool on the top, users can view all the countryside terrorsim attack variations. 
+
+For instance, during the year 1990 to 1995, Columbia, Turkey and Peru were the top three countries suffering the most frequent terrorism attacks, however, while these three countries' casualties were quite high, they were not in the top three countries suffering the most fatalities and wounds. 
+
+While the total number of the terrorism attacks overall in Japan was much lower than the world average, Japan ranked top one during this time stage, with casualty numbers close to 7000, followed by India and Sri Lanka, over 6000 and 5000, respectively. 
+
+Apparently, the damage level is generally positively related to the terrorism attack frequencies, however, in certain countries (Japan in this instance), the attack influences are much more significant.
+
 
 [![Dot Plot]({{ site.url }}/img/demo_static/dotplot.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/dotplot.png)
+
+
 
 Results
 ------------
