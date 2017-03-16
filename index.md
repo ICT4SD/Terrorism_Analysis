@@ -57,7 +57,7 @@ On this page we present you a static version of how this tool looks like. Howeve
 - Json  
 
 We have presented a detailed user manual for users lacking the above dependencies.  
-- [GTA User Manual](https://docs.google.com/document/d/1KNxP-8Ccey1tM1sOBJRB7VyB3rjtPe2gbDFlHtD_iCk)
+- [<span style="color:orange;">GTA User Manual</span>](https://docs.google.com/document/d/1KNxP-8Ccey1tM1sOBJRB7VyB3rjtPe2gbDFlHtD_iCk)
 
 ***
 
@@ -235,8 +235,13 @@ Apparently, the damage level is generally positively related to the terrorism at
 
 [![Dot Plot]({{ site.url }}/img/demo_static/dotplot.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/dotplot.png)
 
+In our final analysis, we classified the terrorism attack types into different categories. The above Dot Plot shows the “top 20” countries who rank the highest for the chosen attack type and the chosen years. By selecting the metric, either casualties or occurrences (Casualties includes killed or wounded, and occurrences refers to terrorism events.), attack type, and time interval, the countries will be ranked. 
 
+For instance, during the year interval 1996 to 2000, Algeria suffered the most from the Armed Assault, followed by Columbia, India and Pakistan.
 
+***
+
+<!--
 Results
 ------------
 
@@ -339,26 +344,15 @@ Limitations
 
 This research is not without limitations. One of the significant limitation of the dataset is that it does not contain data from Syria, the country which is seeing a prolonged civil war since March 2011. So findings of these study can significantly alter once the data from Syria is included in this study. Also from the research design perspective, a more practical approach would be to include other significant factors such as timing of the conflict (<i>Year</i>), the nature of surrounding area of the current conflict zone (up to a certain radius), etc. So, multiple analysis of co-variance (MANCOVA) would be a better experiment than MANOVA for this research design. Other than that, there is also need to see the change in nature of conflicts in terms of duration and casualties over time. So, a time series analysis will be a better alternative to extend this study, which the researcher expects to cover in future work.
 Reference
-
+-->
 
 References
 ------------
 
-- Brams, S. J. (1997). Fair division: A new approach to the Spratly Islands controversy. International Negotiation, 2(2), 303-329.
-
-- Brock, L. (1991). Peace through parks: the environment on the peace research agenda. Journal of Peace Research, 28(4), 407-423.
-
-- Brundtland, G., Khalid, M., Agnelli, S., Al-Athel, S., Chidzero, B., Fadika, L., & Singh, M. (1987). Our common future. World Commission on Environment and Development. Oxford: Oxford University Press.
-
-- Croicu, M., & Sundberg, R. (2015). UCDP Georeferenced Event Dataset Codebook Version 4.0. Journal of Peace Research, 50(4), 523-532.
+- National Consortium for the Study of Terrorism and Responses to Terrorism (START). (2016). Global Terrorism Database ‘gtd_wholedata_selected.csv.’ 
+Retrieved from https://www.start.umd.edu/gtd
 
 - Croicu, M., & Sundberg, R. (2016). UCDP GED Codebook version 5.0, Department of
 Peace and Conflict Research, Uppsala University
 
-- Gleditsch, N. P. (1998). Armed conflict and the environment: A critique of the literature. Journal of peace research, 35(3), 381-400.
-
-- Lonergan, S. (1997). Water resources and conflict: Examples from the Middle East. In Conflict and the Environment (pp. 375-384). Springer Netherlands.
-
 - Sundberg, R., & Melander, E. (2013). Introducing the UCDP georeferenced event dataset. Journal of Peace Research, 50(4), 523-532.
-
-- Wallensteen, P., & Sollenberg, M. (2001). Armed Conflict, 1989-2000. Journal of Peace Research, 38(5), 629-644.
