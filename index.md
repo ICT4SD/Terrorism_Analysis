@@ -201,7 +201,9 @@ The basic intuition from the statistics should be, the places which saw largest 
 
 [![Choropleth Map]({{ site.url }}/img/demo_static/choro.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/choro.png)
 
-In order to extract the information on the severity level of terrorism attack within certain selected year or time period, the Choropleth map above is the ideal visualization tool to realize it. A darker color indicate a higher casualty (fatality or wound) level within certain regions or countries. For instance, in the year 2010, Southeast Asia (especially Iraq) has been suffering severe terrorism attacking threats compared with the rest of the world; some countries in East Europe, Africa and South America, i.e. Russia, Columbia and so on, were also exposed to high terrorism attacks casualties. 
+In order to extract the information on the severity level of terrorism attack within certain selected year or time period, the Choropleth map above is the ideal visualization tool to realize it. 
+
+A darker color indicate a higher casualty (fatality or wound) level within certain regions or countries. For instance, in the year 2010, Southeast Asia (especially Iraq) has been suffering severe terrorism attacking threats compared with the rest of the world; some countries in East Europe, Africa and South America, i.e. Russia, Columbia and so on, were also exposed to high terrorism attacks casualties. 
 
 Regions that were relatively safe during the year 2010 were: North America, West Europe, Oceania and the majority part of South America.
 
@@ -209,18 +211,11 @@ Regions that were relatively safe during the year 2010 were: North America, West
 
 [![Heat Map]({{ site.url }}/img/demo_static/heat.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/heat.png)
 
+For this project, we also present the heatmap to identify:
+- <b>Horizontal:</b> The casualty significance over timeline (1970-2015) based on countrywide terrorism attacks within region divisions
+- <b>Vertical:</b> The regional comparisons and relations about the number of casualties among the countries within region divisions
 
-For this project, we are interested in the hypothetical relation between the duration of conflicts (the number of days one conflict lasts) and the countries as well as the relation between the number of casualties and the countries. So, the research questions we intend to find out are:
-
-- <b>RQ1:</b> Are some of the countries in middle-east more prone to long term conflicts than short-term skirmishes, and
-- <b>RQ2:</b> Are some of the middle-east countries are more prone to high casualty conflicts than other countries of the region?
-
-So, the corresponding null hypothesis for the above two relations are respectively:
-
-- <b>H1:</b> There is no significant difference between the countries on number of days each conflict lasts in each individual country.
-- <b>H2:</b> There is no significant difference between the countries on number of casualties suffered in conflicts.
-
-So, for this research design, the Duration and High_est are our outcome variables (DVs) whereas the Country is our independent variables (IV). Since we have more than one DV in this case, we will perform a multivariate analysis of variance (MANOVA) to test the significance of IV on predicting the DVs. 
+For this research design, the countrywide variations and severities are both shown as our outcome. Specifically, in Southeaset Asia, Philippines has been the most dangerous country in terms of terrorism attacks. Moreover, it is also observable that there has been a surging terrorism attack impact trend in Thailand, peaking in the year 2012. The rest of the countries are relatively safe within this region.
 
 
 
