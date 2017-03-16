@@ -137,7 +137,7 @@ For this specific area selected (in this case, the whole world), the Occurrences
 
 <b>Table 2</b>: Occurrence Analysis for the Chosen Area: Worldwide
 
-|     Feature     |   Occurrences   |
+|     Features     |   Occurrences   |
 | --------------- | --------------- |
 | Total Number    |      156772     |
 | Annual Average  |       3483      |
@@ -145,7 +145,7 @@ For this specific area selected (in this case, the whole world), the Occurrences
 
 And <b>Table 3</b> shows a statistical analysis of Casualties around the whole world during 1970 to 2015.
 
-|     Feature       |     Casualties    |
+|     Features       |     Casualties    |
 | ----------------- | ----------------- |
 | Total Fatalities  |       348215      |
 | Total Wounds      |       440002      |
@@ -157,81 +157,45 @@ And <b>Table 3</b> shows a statistical analysis of Casualties around the whole w
 
 
 
-
+<b>Table 3</b> Casualties Analysis: Worldwide (1970-2015)
 <table border="1">
 <tr>
   <td></td>
-  <td><b>Country</b></td>
-  <td><b>Frequency of Conflicts</b></td>
+  <td><b>Features</b></td>
+  <td><b>Casualties</b></td>
 </tr>
 <tr>
-  <td>1</td>
-  <td>Bahrain</td>
-  <td>24</td>
+  <td>Total</td>
+  <td>Fatalities</td>
+  <td>348215</td>
 </tr>
 <tr>
-  <td>2</td>
-  <td>Egypt</td>
-  <td>536</td>
+  <td></td>
+  <td>Wounds</td>
+  <td>440002</td>
 </tr>
 <tr>
-  <td>3</td>
-  <td>Iran</td>
-  <td>219</td>
+  <td>Annual</td>
+  <td>Fatalities</td>
+  <td>7738</td>
 </tr>
 <tr>
-  <td>4</td>
-  <td>Iraq</td>
-  <td>5891</td>
+  <td></td>
+  <td>Wounds</td>
+  <td>9777</td>
 </tr>
 <tr>
-  <td>5</td>
-  <td>Israel</td>
-  <td>2724</td>
+  <td>1-unit STD</td>
+  <td>Fatalities</td>
+  <td>8447.86</td>
 </tr>
 <tr>
-  <td>6</td>
-  <td>Jordan</td>
-  <td>2</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td>Kuwait</td>
-  <td>40</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td>Lebanon</td>
-  <td>1070</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td>Qatar</td>
-  <td>1</td>
-</tr>
-<tr>
-  <td>10</td>
-  <td>Saudi Arabia</td>
-  <td>107</td>
-</tr>
-<tr>
-  <td>11</td>
-  <td>Turkey</td>
-  <td>4581</td>
-</tr>
-<tr>
-  <td>12</td>
-  <td>United Arab Emirates</td>
-  <td>1</td>
-</tr>
-<tr>
-  <td>13</td>
-  <td>Yemen (North Yemen)</td>
-  <td>1450</td>
+  <td></td>
+  <td>Wounds</td>
+  <td>10357.73</td>
 </tr>
 </table>
 
-<b>Table 1</b>: List of countries and their frequency of conflicts
 
 Also if we list the countries according to the frequency of violence faced in this time period, the result (Table 1) shows countries such as Iraq and Turkey are the most frequent to such conflicts, whereas Qatar and United Arab Emirates have faced least amount of conflicts.
 
