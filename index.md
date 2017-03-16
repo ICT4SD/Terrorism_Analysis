@@ -122,25 +122,22 @@ Analysis
 [![Statistical Overview]({{ site.url }}/img/demo_static/lineplot.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/lineplot.png)
 
 
-To begin with our data analysis journey, we will start with the time series statistical overview from 1970 to 2015, by customising the country (or the whole world) and the feature selection. Above is an example of the terrorism attack occurrence trend overview within the whole world. A upward going trend can be observed straightforwardly, with a peak in the year 2014. Below is a detailed statistical analysis.
+To begin with our data analysis journey, we will start with the time series statistical overview from 1970 to 2015, by customising the country (or the whole world) and the feature selection. Above is an example of the terrorism attack occurrence trend overview within the whole world. A upward going trend can be observed straightforwardly, with a peak in the year 2014. <b>Table 1</b> is a detailed statistical analysis.
 
 |             World Overview (1970 - 2015)             |
 | ---------------------------------------------------- |
-|The Year with the Most Attacks         |     2014     |
+|Year with Most Attacks and Casualties  |     2014     |
 |Total Number of Terror Attacks in 2014 |    16840     |
-|The Year with the Most Casulties       |     2014     |
 |Total Number of Casualties in 2014     |    84089     |
-
 <b>Table 1</b>: World Terrorism Attack Overview
 
-For this specific country selected ( in this case, the whole world), the Occurrences of Terrorism Attacks analysis is shown below:
+For this specific area selected (in this case, the whole world), the Occurrences of Terrorism Attacks analysis is shown in <b> Table 2</b>.
 
 |                 |   Occurrences   |
 | --------------- | --------------- |
 | Total Number    |      156772     |
 | Annual Average  |       3483      |
 | 1 Unit Std      |      3441.55    |
-
 <b>Table 2</b>: Occurrence Analysis for the Chosen Area: Worldwide
 
 
