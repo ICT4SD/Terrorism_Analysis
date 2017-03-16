@@ -349,7 +349,7 @@ Reference
 References
 ------------
 
-- National Consortium for the Study of Terrorism and Responses to Terrorism (START). (2016). Global Terrorism Database ‘gtd_wholedata_selected.csv.’ 
+- National Consortium for the Study of Terrorism and Responses to Terrorism (START). (2016). Global Terrorism Database.
 Retrieved from https://www.start.umd.edu/gtd
 
 - Croicu, M., & Sundberg, R. (2016). UCDP GED Codebook version 5.0, Department of
