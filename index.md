@@ -36,7 +36,7 @@ This project is part of the United Nations’ ICT4SD (Information and Communicat
 
 ***
 
-Get Started
+Getting Started
 -----------------
 
 On this page we present you a static version of how this tool looks like. However, in order to customize and interact with all the visualizations, it is recommended to use Jupyter Notebook with related packages installed.
@@ -90,7 +90,7 @@ The GTD was designed to gather a wide variety of etiological and situational var
  
  <b>4) Attack Information: </b>
  - Attack Type: 8 categories + unknown. 
-    <blockquote><i>"Assassination, Hijacking, Kidnapping, Barricade Incident, Bombing/Explosion, Armed Assault, Unarmed Assault, Facility/Infrastructure Attack, and Unknown".</i></blockquote>
+    > "Assassination, Hijacking, Kidnapping, Barricade Incident, Bombing/Explosion, Armed Assault, Unarmed Assault, Facility/Infrastructure Attack, and Unknown".
  - Suicide Attack
  
  <b>5) Weapon Information: </b>
@@ -123,6 +123,18 @@ Analysis
 
 
 To analyze the data, we will start with some descriptive statistics of the data. As, the boxplot in the next page suggests (Fig. 1) that among all the middle eastern countries Egypt faced conflicts for longest span of time, whereas countries such as Bahrain, Qatar, and United Arab Emirates faced conflicts for shortest period of time.
+
+|                 World Overview               |
+| -------------------------------------------- |
+|During the year 1970 to 2015:                 | 
+| -------------------------------------------- |
+|The year with the most attacks |      2014    |
+
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 <table border="1">
 <tr>
