@@ -195,14 +195,20 @@ Also, if we select "Casualties" as the target feature, we can get a detailed sta
 </tr>
 </table>
 
-
 <!--Also if we list the countries according to the frequency of violence faced in this time period, the result (Table 1) shows countries such as Iraq and Turkey are the most frequent to such conflicts, whereas Qatar and United Arab Emirates have faced least amount of conflicts.
 
 The basic intuition from the statistics should be, the places which saw largest number of violence and for longest period of time should count largest number of casualties. However, if we plot the co-ordinates (longitude and latitude) of each conflict area against the number of estimated deaths (Fig. 2), the map suggests apart from countries which are more prone to conflicts (such as Iraq) some of the other countries (such as Kuwait) with less number of conflicts also faced large number of casualties. -->
 
 [![Choropleth Map]({{ site.url }}/img/demo_static/choro.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/choro.png)
 
-In order to extract the information on the severity level of terrorism attack within certain selected year or time period, the Choropleth map above is the ideal visualization tool to realize it. 
+In order to extract the information on the severity level of terrorism attack within certain selected year or time period, the Choropleth map above is the ideal visualization tool to realize it. A darker color indicate a higher casualty (fatality or wound) level within certain regions or countries. For instance, in the year 2010, Southeast Asia (especially Iraq) has been suffering severe terrorism attacking threats compared with the rest of the world; some countries in East Europe, Africa and South America, i.e. Russia, Columbia and so on, were also exposed to high terrorism attacks casualties. 
+
+Regions that were relatively safe during the year 2010 were: North America, West Europe, Oceania and the majority part of South America.
+
+
+
+[![Heat Map]({{ site.url }}/img/demo_static/heat.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/heat.png)
+
 
 For this project, we are interested in the hypothetical relation between the duration of conflicts (the number of days one conflict lasts) and the countries as well as the relation between the number of casualties and the countries. So, the research questions we intend to find out are:
 
@@ -216,8 +222,6 @@ So, the corresponding null hypothesis for the above two relations are respective
 
 So, for this research design, the Duration and High_est are our outcome variables (DVs) whereas the Country is our independent variables (IV). Since we have more than one DV in this case, we will perform a multivariate analysis of variance (MANOVA) to test the significance of IV on predicting the DVs. 
 
-
-[![Heat Map]({{ site.url }}/img/demo_static/heat.png)](https://github.com/ICT4SD/ICT4SD.github.io/blob/master/img/demo_static/heat.png)
 
 
 
