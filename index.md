@@ -79,48 +79,39 @@ The GTD was designed to gather a wide variety of etiological and situational var
   
  <b>2) Incident Information: </b>  
  - Incident Summary: A brief narrative summary of the incident, noting the “when, where, who, what, how, and why.”
- - 
-   
-country
-state/province
-city
-latitude and longitude (beta)
-perpetrator group name
-tactic used in attack
-nature of the target (type and sub-type, up to three targets)
-identity, corporation, and nationality of the target (up to three nationalities)
-type of weapons used (type and sub-type, up to three weapons types)
-whether the incident was considered a success
-if and how a claim(s) of responsibility was made
-amount of damage, and more narrowly, the amount of United States damage
-total number of fatalities (persons, United States nationals, terrorists)
-total number of injured (persons, United States nationals, terrorists)
-indication of whether the attack is international or domestic
-Other variables provide information unique to specific types of cases, including kidnappings, hostage incidents, and hijackings.
+ - Inclusion Criteria
+ 
+ <b>3) Incident Location: </b>
+ - Country, region, state/province, city, vicinity, Location Description.
+ - Latitude and longitude
+ - Geocoding specificity
+ 
+ <b>4) Attack Information: </b>
+ - Attack Type: 8 categories + unknown. 
+    <blockquote><i>"Assassination, Hijacking, Kidnapping, Barricade Incident, Bombing/Explosion, Armed Assault, Unarmed Assault, Facility/Infrastructure Attack, and Unknown".</i></blockquote>
+ - Suicide Attack
+ 
+ <b>5) Weapon Information: </b>
+ - Weapon Type: 13 categories.
+ - Several sub weapon types.
+ 
+ <b>6) Target/Victim Information: </b>
+ - Target/Victim Type: 22 categories
+ - Several specific target/victim information, including names, nationalities, etc.
+ 
+ <b>7) Perpetrator Information: </b>
+ - Perpetrator Group Name: the name of the group that carried out the attack
+ - Several sub-group information, including number, claim, motive, etc.
+ 
+ <b>8) Casualties and Consequences: </b>
+ - Total Number of Fatalities, including Number of US Fatalities and Number of Perpetrator Fatalities
+ - Total Number of Injured, including Number of U.S. Injured and Number of Perpetrators Injured
+ - Property Damage, including damage extend, values and comments
+ - Total Number of Hostages/ Kidnapping Victims, including US Hostages or Kidnapping Victims, kidnapping hours, countries, total ransom mmount demanded, and number released/escaped/rescued
+ 
+ <b>9) Additional Information and Sources: </b>
+  - Additional relevant details about the attack, including International‐ Logistical, International‐ Miscellaneous, and sources.
 
- <b>a) Relid: </b> A quick machine parse-able string key describing the content of each event. The key is constructed using the abbreviation of the country name (for instance AFG for Afghanistan), the calendar year, the type of violence, the dyad or actor ID and a counter.
-This variable is also a unique identifier for each event in the entire dataset.
-
-<b>b) Year:</b> The year of the occurrence for the event.
-
-<b>c) Where_coordinates:</b> Name of the location to which the event is assigned. Fully standardized and normalized.
-
-<b>d) Latitude:</b> Latitude (in decimal degrees).
-
-<b>e) Longitude:</b> Longitude of the place (in decimal degrees).
-
-<b>f) Country:</b> Name of the country in which the event takes place.
-
-<b>g) Date_start:</b> The earliest possible date when the event has taken place (in YYYY-MM-DD format).
-
-<b>h) Date_end:</b> The last possible date when the event has taken place (in YYYY-MM-DD format).
-
-<b>i) High_est:</b> The highest reliable estimate of total fatalities.
-Since we are concentrating on the duration of the conflicts for these study, we have introduced one of our own variable, called Duration apart from those earlier mentioned, which represents the duration of a conflict in number of days. The Duration is calculated as:
-
-<p ALIGN=MIDDLE><b><i>Duration: (Date_end - Date_start) +1</i></b></p>
-
-So, from the above equation, the minimum duration of each conflict is one day.
 
 
 Analysis
