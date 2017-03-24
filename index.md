@@ -97,8 +97,8 @@ The GTD was designed to gather a wide variety of etiological and situational var
  - Weapon Type: 12 categories + unknown.
  - Several sub weapon types.
  
- <b>6) Target/Victim Information: </b>
- - Target/Victim Type: 22 categories
+ <b>6) Target Information: </b>
+ - Target Type: 22 categories
  - Several specific target/victim information, including names, nationalities, etc.
  
  <b>7) Perpetrator Information: </b>
@@ -109,7 +109,7 @@ The GTD was designed to gather a wide variety of etiological and situational var
  - Total Number of Fatalities, including Number of US Fatalities and Number of Perpetrator Fatalities
  - Total Number of Injured, including Number of U.S. Injured and Number of Perpetrators Injured
  - Property Damage, including damage extend, values and comments
- - Total Number of Hostages/ Kidnapping Victims, including US Hostages or Kidnapping Victims, kidnapping hours, countries, total ransom mmount demanded, and number released/escaped/rescued
+ - Total Number of Hostages/Kidnapping Victims, including US Hostages or Kidnapping Victims, kidnapping hours, countries, total ransom mmount demanded, and number released/escaped/rescued
  
  <b>9) Additional Information and Sources: </b>
   - Additional relevant details about the attack, including International‐ Logistical, International‐ Miscellaneous, and sources.
